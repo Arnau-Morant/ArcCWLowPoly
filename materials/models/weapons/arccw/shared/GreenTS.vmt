@@ -1,0 +1,8 @@
+"UnlitGeneric"
+{
+		"$basetexture" "models/weapons/arccw/shared/GreenTS"
+		$nocull 1
+		$selfilum 1
+		"$blendtintbybasealpha" "1"
+		"$blendtintcoloroverbase" "0"
+}
