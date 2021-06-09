@@ -51,7 +51,7 @@ end
 
 SWEP.ViewModel = "models/weapons/arccw/c_lowpolyfal.mdl"
 SWEP.WorldModel = "models/weapons/w_rif_m4a1.mdl"
-SWEP.ViewModelFOV = 60
+SWEP.ViewModelFOV = 70
 SWEP.AnimShoot = ACT_HL2MP_GESTURE_RANGE_ATTACK_AR2
 
 -- Damage parameters --
@@ -73,8 +73,8 @@ SWEP.ReducedClipSize = 10
 
 -- Recoil --
 
-SWEP.Recoil = 1
-SWEP.RecoilSide = 0.74
+SWEP.Recoil = 0.4
+SWEP.RecoilSide = 0.28
 
 SWEP.RecoilRise = 0.3
 SWEP.VisualRecoilMult = 0.4

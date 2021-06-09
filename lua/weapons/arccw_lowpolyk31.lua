@@ -79,7 +79,7 @@ SWEP.ReducedClipSize = 4
 
 -- Recoil --
 
-SWEP.Recoil = 1.2
+SWEP.Recoil = 0.6
 SWEP.RecoilSide = 1.4
 
 SWEP.MaxRecoilBlowback = 1
@@ -340,7 +340,7 @@ SWEP.Animations = {
 
 -- Bodygroups -- 
 
-SWEP.StripperClipBones = {
+SWEP.BulletBones = {
     [1] = "Bullet1",
     [2] = "Bullet2",
     [3] = "Bullet3",

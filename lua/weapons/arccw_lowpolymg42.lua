@@ -29,7 +29,7 @@ SWEP.TrueName = "MG-42"
 -- Trivia --
 
 SWEP.Trivia_Class = "MaschinenGewehr"
-SWEP.Trivia_Desc = "Inacurate, bulky and hard to operate but also a great area denial offensive/deffensive gun."
+SWEP.Trivia_Desc = "Inaccurate, bulky and hard to operate, designed for offensive/deffensive area denial."
 SWEP.Trivia_Manufacturer = "Whermatch Militär-Programm"
 SWEP.Trivia_Calibre = "7.92×57mm Mauser"
 SWEP.Trivia_Mechanism = "Recoil-operated, roller-locked"
@@ -80,8 +80,8 @@ SWEP.ReducedClipSize = 35
 
 -- Recoil --
 
-SWEP.Recoil = 1
-SWEP.RecoilSide = 0.8
+SWEP.Recoil = 0.55
+SWEP.RecoilSide = 0.4
 
 SWEP.MaxRecoilBlowback = 0
 SWEP.VisualRecoilMult = 0.2

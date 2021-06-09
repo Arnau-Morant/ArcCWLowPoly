@@ -51,7 +51,7 @@ end
 
 SWEP.ViewModel = "models/weapons/arccw/c_lowpolysaiga12.mdl"
 SWEP.WorldModel = "models/weapons/w_rif_ak47.mdl"
-SWEP.ViewModelFOV = 70
+SWEP.ViewModelFOV = 60
 SWEP.AnimShoot = ACT_HL2MP_GESTURE_RANGE_ATTACK_AR2
 
 -- Damage parameters --
@@ -73,8 +73,8 @@ SWEP.ReducedClipSize = 2
 
 -- Recoil --
 
-SWEP.Recoil = 2.7
-SWEP.RecoilSide = 3
+SWEP.Recoil = 1
+SWEP.RecoilSide = 1
 
 SWEP.RecoilRise = 0.24
 SWEP.VisualRecoilMult = 1

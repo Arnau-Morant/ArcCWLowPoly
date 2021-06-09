@@ -73,8 +73,8 @@ SWEP.ReducedClipSize = 20
 
 -- Recoil --
 
-SWEP.Recoil = 0.7
-SWEP.RecoilSide = 0.24
+SWEP.Recoil = 0.3
+SWEP.RecoilSide = 0.18
 
 SWEP.RecoilRise = 0.24
 SWEP.VisualRecoilMult = 0.6

@@ -64,7 +64,7 @@ SWEP.WorldModelOffset = {
 
 -- Damage parameters --
 
-SWEP.Damage = 26
+SWEP.Damage = 34
 SWEP.DamageMin = 11
 SWEP.Range = 100
 SWEP.Penetration = 6
@@ -81,8 +81,8 @@ SWEP.ReducedClipSize = 20
 
 -- Recoil --
 
-SWEP.Recoil = 0.6
-SWEP.RecoilSide = 0.3
+SWEP.Recoil = 0.2
+SWEP.RecoilSide = 0.2
 
 SWEP.MaxRecoilBlowback = -2
 SWEP.VisualRecoilMult = 0.1

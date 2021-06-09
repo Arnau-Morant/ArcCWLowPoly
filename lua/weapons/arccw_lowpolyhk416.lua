@@ -8,12 +8,13 @@ SWEP.UseHands = true
 
 SWEP.MuzzleEffect = "muzzleflash_3"
 SWEP.ShellModel = "models/shells/shell_556.mdl"
-SWEP.ShellScale = 1.5
+SWEP.ShellScale = 1
 SWEP.ShellMaterial = "models/weapons/arcticcw/shell_556mm"
 SWEP.ShellPitch = 90
 
 SWEP.MuzzleEffectAttachment = 1
 SWEP.CaseEffectAttachment = 2
+SWEP.CamAttachment = 5
 SWEP.TracerNum = 1
 SWEP.TracerCol = Color(25, 255, 25)
 SWEP.TracerWidth = 2
@@ -51,7 +52,7 @@ end
 
 SWEP.ViewModel = "models/weapons/arccw/c_lowpolyhk416.mdl"
 SWEP.WorldModel = "models/weapons/w_rif_m4a1.mdl"
-SWEP.ViewModelFOV = 67
+SWEP.ViewModelFOV = 80
 SWEP.AnimShoot = ACT_HL2MP_GESTURE_RANGE_ATTACK_AR2
 
 -- Damage parameters --
@@ -67,14 +68,14 @@ SWEP.MuzzleVelocity = 850
 -- Mag size --
 
 SWEP.ChamberSize = 1
-SWEP.Primary.ClipSize = 30
+SWEP.Primary.ClipSize = 999
 SWEP.ExtendedClipSize = 40
 SWEP.ReducedClipSize = 20
 
 -- Recoil --
 
-SWEP.Recoil = 0.8
-SWEP.RecoilSide = 0.3
+SWEP.Recoil = 0.33
+SWEP.RecoilSide = 0.2
 
 SWEP.RecoilRise = 0.3
 SWEP.VisualRecoilMult = 0.7
@@ -128,7 +129,6 @@ SWEP.SightTime = 0.4
 -- Gun length --
 
 SWEP.BarrelLength = 45
-SWEP.ExtraSightDist = 7
 
 -- Ironsight / Customization / Active pos ang --
 
@@ -139,19 +139,17 @@ SWEP.HoldtypeActive = "ar2"
 SWEP.HoldtypeSights = "rpg"
 
 SWEP.IronSightStruct = {
-     Pos = Vector(-4.136, -6.5, 0.8),
+     Pos = Vector(-3.135, 0, 0.3),
      Ang = Angle(0.8, 0, 0),
      Magnification = 1,
      SwitchToSound = "",
 }
 
-SWEP.ActivePos = Vector(0, 0, 0)
-
 SWEP.CustomizePos = Vector(0, 0, 0)
 SWEP.CustomizeAng = Angle(0, 0, 0)
 
-SWEP.CrouchPos = Vector(-3, -2, 0)
-SWEP.CrouchAng = Angle(0, 0, -12)
+SWEP.CrouchPos = Vector(-2, -2, 0)
+SWEP.CrouchAng = Angle(0, 0, -8)
 
 SWEP.MirrorVMWM = true
 SWEP.WorldModelOffset = {
@@ -161,16 +159,10 @@ SWEP.WorldModelOffset = {
 }
 
 -- Weapon sounds --
-
+SWEP.FirstShootSound = "weapons/arccw/hk416/lowpolyhk416_fire.ogg"
 SWEP.ShootSound = {"weapons/arccw/hk416/lowpolyhk416_fire_auto_01.ogg", "weapons/arccw/hk416/lowpolyhk416_fire_auto_02.ogg", "weapons/arccw/hk416/lowpolyhk416_fire_auto_03.ogg", "weapons/arccw/hk416/lowpolyhk416_fire_auto_04.ogg", "weapons/arccw/hk416/lowpolyhk416_fire_auto_05.ogg", "weapons/arccw/hk416/lowpolyhk416_fire_auto_06.ogg", "weapons/arccw/hk416/lowpolyhk416_fire_auto_07.ogg", "weapons/arccw/hk416/lowpolyhk416_fire_auto_08.ogg", "weapons/arccw/hk416/lowpolyhk416_fire_auto_09.ogg", "weapons/arccw/hk416/lowpolyhk416_fire_auto_10.ogg", "weapons/arccw/hk416/lowpolyhk416_fire_auto_11.ogg", "weapons/arccw/hk416/lowpolyhk416_fire_auto_12.ogg", "weapons/arccw/hk416/lowpolyhk416_fire_auto_13.ogg", "weapons/arccw/hk416/lowpolyhk416_fire_auto_14.ogg", "weapons/arccw/hk416/lowpolyhk416_fire_auto_15.ogg"}
 SWEP.ShootSoundSilenced = "weapons/arccw/arx160/lowpolyarx160_supp.ogg"
 SWEP.DistantShootSound = "weapons/arccw/hk416/lowpolyhk416_fire_auto_dist.ogg"
-
-SWEP.Hook_GetShootSound = function( wep, snd )
-    if wep:GetCurrentFiremode().Mode == 1 then
-        return "weapons/arccw/hk416/lowpolyhk416_fire.ogg"
-    end
-end
 
 -- Bodygroups --
 
@@ -202,7 +194,7 @@ SWEP.AttachmentElements = {
             },
         },
         Override_IronSightStruct = {
-            Pos = Vector(-4.128, -6.5, 0.76),
+            Pos = Vector(-3.135, 0, 0.3),
             Ang = Angle(0.8, 0, 0),
             Magnification = 1,
         },
@@ -235,27 +227,58 @@ SWEP.AttachmentElements = {
             },
         },
         Override_IronSightStruct = {
-            Pos = Vector(-4.132, -6.8, 0.76),
-            Ang = Angle(1, 0, 0),
+            Pos = Vector(-3.135, 0, 0.3),
+            Ang = Angle(0.8, 0, 0),
             Magnification = 1,
         },
     },
 
     -- Ind stocks --
 
-    ["m4stock"] = {
-        VMBodygroups = {{ind = 4, bg = 1}},
+    ["go_stock"] = {
+        VMElements = {
+        {
+                Model = "models/weapons/arccw/atts/buffer_lpstock.mdl",
+                Bone = "Body",
+                Offset = {
+                    pos = Vector(0, -2.1, -0.8),
+                    ang = Angle(90, 0, -90),
+                },
+                Scale = Vector(0.9,0.9,0.9),
+            }
+        },
     },
-    ["comfstock"] = {
-        VMBodygroups = {{ind = 4, bg = 3}},
+    
+    ["lpglobal_stock"] = {
+        VMElements = {
+        {
+                Model = "models/weapons/arccw/atts/buffer_lpstock.mdl",
+                Bone = "Body",
+                Offset = {
+                    pos = Vector(0, -2.1, -0.8),
+                    ang = Angle(90, 0, -90),
+                },
+                Scale = Vector(0.9,0.9,0.9),
+            }
+        },
     },
-    ["ak12stock"] = {
-        VMBodygroups = {{ind = 4, bg = 4}},
+    
+    ["buffer"] = {
+        VMElements = {
+        {
+                Model = "models/weapons/arccw/atts/buffer_lpstock.mdl",
+                Bone = "Body",
+                Offset = {
+                    pos = Vector(0, -2.1, -0.8),
+                    ang = Angle(90, 0, -90),
+                },
+                Scale = Vector(0.9,0.9,0.9),
+            }
+        },
     },
-    ["hmstock"] = {
-        VMBodygroups = {{ind = 4, bg = 2}},
-    },
-
+    
+    ["lphm_stock"] = {},
+    
     -- Iron Sights / Flash Hiders --
 
     ["altirons1"] = {
@@ -294,12 +317,6 @@ SWEP.AttachmentElements = {
 
 -- Animations --
 
-SWEP.Jamming = false
-SWEP.HeatCapacity = 50
-SWEP.HeatDissipation = 3
-SWEP.HeatLockout = false
-SWEP.HeatDelayTime = 0
-
 SWEP.Animations = {
     ["idle"] = {
         Source = "idle",
@@ -310,41 +327,26 @@ SWEP.Animations = {
     ["ready"] = {
         Source = "ready",
         Framerate = 60,
-        time = 78 / 60,
+        time = 75 / 60,
         LHIK = true,
         LHIKIn = 0,
-        LHIKOut = 0.5,
+        LHIKEaseOut = 0.2,
+        LHIKOut = 0.6,
     },
     ["draw"] = {
         Source = "draw",
-        time = 40 / 60,
         Framerate = 60,
     },
     ["draw_empty"] = {
         Source = "draw_empty",
-        time = 40 / 60,
         Framerate = 60,
-    },
-    ["fire_iron"] = {
-        Source = "fire_iron",
-        Framerate = 60,
-        Time = 30 / 60,
-        ShellEjectAt = 0.01,
-        --SoundTable = {{ s = "weapons/arccw/hk416/lowpolyhk416_mech.ogg"}},
     },
     ["fire"] = {
-        Source = "fire",
+        Source = {"fire_01","fire_02","fire_03"},
         Framerate = 60,
         Time = 30 / 60,
         ShellEjectAt = 0.01,
         --SoundTable = {{ s = "weapons/arccw/hk416/lowpolyhk416_mech.ogg"}},
-    },
-    ["fire_iron_empty"] = {
-        Source = "fire_iron_empty",
-        Framerate = 60,
-        Time = 30 / 60,
-        ShellEjectAt = 0.01,
-        SoundTable = {{ s = "weapons/arccw/arx160/lowpolyarx160_empty.ogg", t = 0.03 }},
     },
     ["fire_empty"] = {
         Source = "fire_empty",
@@ -359,12 +361,14 @@ SWEP.Animations = {
     ["reload"] = {
         Source = "reload",
         TPAnim = ACT_HL2MP_GESTURE_RELOAD_AR2,
-        Time = 148 / 60,
+        Time = 136 / 60,
         Framerate = 60,
         LastClip1OutTime = 2,
         LHIK = true,
-        LHIKIn = 0.3,
-        LHIKOut = 0.4,
+        LHIKIn = 0.2,
+        LHIKEaseIn = 0.2,
+        LHIKEaseOut = 0.2,
+        LHIKOut = 0.6,
     },
     ["reload_empty"] = {
         Source = "reload_empty",
@@ -400,7 +404,7 @@ SWEP.Animations = {
     -- 9mm reloads --
 
     ["reload_9mm"] = {
-        Source = "reload_9mm",
+        Source = "reload",
         TPAnim = ACT_HL2MP_GESTURE_RELOAD_AR2,
         Time = 148 / 60,
         Framerate = 60,
@@ -502,11 +506,9 @@ end
 -- Attachments --
 
 SWEP.RejectAttachments = {
-  ["perk_extendedmags"] = true,
   ["muzz_hbar"] = true,
   ["muzz_lbar"] = true,
   ["lpak_polymer"] = true,
-  ["lphk416_hkheavystock"] = true,
 }
 
 SWEP.Attachments = {
@@ -530,14 +532,15 @@ SWEP.Attachments = {
             vpos = Vector(0, -3.5, 6),
             vang = Angle(90, 0, -90),
         },
-        ExtraSightDist = 7,
+        ExtraSightDist = 10,
         InstalledEles = {"nois"},
+        CorrectivePos = Vector(0.5, 0, -0.22),
         Hidden = true, -- Shittiest way of fixing bodygroup priority --
     },
     {
         PrintName = "Muzzle",
         DefaultAttName = "Standard Muzzle",
-        Slot = {"muzzle","mw_muzzle"},
+        Slot = {"muzzle"},
         Bone = "Barrel",
         Offset = {
             vpos = Vector(0, 0, 0),
@@ -557,7 +560,7 @@ SWEP.Attachments = {
     },
     {
         PrintName = "Tactical",
-        Slot = {"tac","mw_tac"},
+        Slot = {"tac"},
         Bone = "Body",
         Offset = {
             vpos = Vector(0, -1, 16),
@@ -570,15 +573,23 @@ SWEP.Attachments = {
     },
     {
         PrintName = "Stock",
-        Slot = {"lpglobal_stock"},
-		DefaultAttIcon = Material("entities/att/acwatt_lowpolyhk416defstock.png"),
-        DefaultAttName = "Heavy Stock (HK 416)"
+        Slot = {"lpglobal_stock","go_stock","lphm_stock"},
+		DefaultAttIcon = Material("entities/att/acwatt_lowpolybuffer.png"),
+        DefaultAttName = "Buffer Tube",
+        Bone = "Body",
+        Offset = {
+            vpos = Vector(0, -2.1, -0.8),
+            vang = Angle(90, 0, -90),
+        },
+        VMScale = Vector(0.9,0.9,0.9),
+        DefaultEles = {"buffer"},
+        Installed = "lphk416_hkheavystock",
     },
     {
         PrintName = "Mag Type",
         Slot = {"lphk416_mag"},
 		DefaultAttIcon = Material("entities/att/acwatt_lowpolyhk416defmag.png"),
-        DefaultAttName = "30 Round Mag (HK 416)",
+        DefaultAttName = "30-Round STANAG Mag",
     },
     {
         PrintName = "Ammo Type",

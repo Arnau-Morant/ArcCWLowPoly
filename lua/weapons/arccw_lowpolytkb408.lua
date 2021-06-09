@@ -29,7 +29,7 @@ SWEP.TrueName = "TKB-408"
 -- Trivia --
 
 SWEP.Trivia_Class = "Assault Rifle"
-SWEP.Trivia_Desc = "Prototype designed for the Red Army, didn't get past the trials."
+SWEP.Trivia_Desc = "Prototype designed to be the first assault rifle for the Red Army, didn't get past the trials."
 SWEP.Trivia_Manufacturer = "Bursilov"
 SWEP.Trivia_Calibre = "7.62x39mm Soviet"
 SWEP.Trivia_Mechanism = "Gas-operated, Tilting bolt"
@@ -51,7 +51,7 @@ end
 
 SWEP.ViewModel = "models/weapons/arccw/c_lowpolytkb408.mdl"
 SWEP.WorldModel = "models/weapons/w_rif_ak47.mdl"
-SWEP.ViewModelFOV = 64
+SWEP.ViewModelFOV = 60
 SWEP.AnimShoot = ACT_HL2MP_GESTURE_RANGE_ATTACK_AR2
 
 -- Damage parameters --
@@ -73,8 +73,8 @@ SWEP.ReducedClipSize = 20
 
 -- Recoil --
 
-SWEP.Recoil = 1
-SWEP.RecoilSide = 0.3
+SWEP.Recoil = 0.24
+SWEP.RecoilSide = 0.18
 
 SWEP.RecoilRise = 0.3
 SWEP.VisualRecoilMult = 0.7

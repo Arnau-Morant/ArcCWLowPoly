@@ -8,7 +8,7 @@ SWEP.UseHands = true
 
 SWEP.MuzzleEffect = "muzzleflash_1"
 SWEP.ShellModel = "models/shells/shell_556.mdl"
-SWEP.ShellScale = 1
+SWEP.ShellScale = 1.4
 SWEP.ShellMaterial = "models/weapons/arcticcw/shell_556"
 SWEP.ShellPitch = 100
 
@@ -51,7 +51,7 @@ end
 
 SWEP.ViewModel = "models/weapons/arccw/c_lowpolym249.mdl"
 SWEP.WorldModel = "models/weapons/w_rif_m4a1.mdl"
-SWEP.ViewModelFOV = 70
+SWEP.ViewModelFOV = 85
 SWEP.AnimShoot = ACT_HL2MP_GESTURE_RANGE_ATTACK_AR2
 
 -- Damage parameters --
@@ -73,8 +73,8 @@ SWEP.ReducedClipSize = 30
 
 -- Recoil --
 
-SWEP.Recoil = 0.5
-SWEP.RecoilSide = 0.5
+SWEP.Recoil = 0.1
+SWEP.RecoilSide = 0.14
 
 SWEP.RecoilRise = 0.3
 SWEP.VisualRecoilMult = 0.4
@@ -83,7 +83,7 @@ SWEP.MaxRecoilPunch = 1
 
 -- Firerate / Firemodes --
 
-SWEP.Delay = 60 / 850
+SWEP.Delay = 60 / 800
 SWEP.Num = 1
 SWEP.Firemodes = {
     {
@@ -139,7 +139,7 @@ SWEP.HoldtypeActive = "ar2"
 SWEP.HoldtypeSights = "rpg"
 
 SWEP.IronSightStruct = {
-     Pos = Vector(-3.44, 0, 2.3),
+     Pos = Vector(-3.44, 4, 2.3),
      Ang = Angle(0.1, 0, 0),
      Magnification = 1,
      SwitchToSound = "",
@@ -167,7 +167,7 @@ local path = "weapons/arccw/m249/"
 local pathDist = "weapons/arccw/czbren/"
 SWEP.ShootSound = path .. "fire.ogg"
 SWEP.ShootSoundSilenced = path .. "supp.ogg"
-SWEP.DistantShootSound = pathDist .. "lowpolyczbren_dist.ogg"
+SWEP.DistantShootSound = "weapons/arccw/czbren/lowpolyczbren_dist.ogg"
 
 -- Bodygroups --
 
@@ -183,20 +183,17 @@ SWEP.AttachmentElements = {
     ["nofh"] = {
         VMBodygroups = {{ind = 1, bg = 4}},
     },
-    ["nors"] = {
-        VMBodygroups = {{ind = 3, bg = 1}},
-    },
 
     ["go_stock"] = {
         VMBodygroups = {
-            {ind = 7, bg = 2}
+            {ind = 2, bg = 1}
         },
         VMElements = {
         {
                 Model = "models/weapons/arccw/atts/buffer_lpstock.mdl",
                 Bone = "Body",
                 Offset = {
-                    pos = Vector(0, -0.2, -16.7),
+                    pos = Vector(0, -2, -12.1),
                     ang = Angle(90, 0, -90),
                 },
                 Scale = Vector(0.9,0.9,0.9),
@@ -206,14 +203,14 @@ SWEP.AttachmentElements = {
     
     ["lpglobal_stock"] = {
         VMBodygroups = {
-            {ind = 7, bg = 2}
+            {ind = 2, bg = 1}
         },
         VMElements = {
         {
                 Model = "models/weapons/arccw/atts/buffer_lpstock.mdl",
                 Bone = "Body",
                 Offset = {
-                    pos = Vector(0, -0.2, -16.7),
+                    pos = Vector(0, -2, -12.1),
                     ang = Angle(90, 0, -90),
                 },
                 Scale = Vector(0.9,0.9,0.9),
@@ -222,12 +219,7 @@ SWEP.AttachmentElements = {
     },
     
     ["lphm_stock"] = {
-        VMBodygroups = {{ind = 7, bg = 2}},
-        AttPosMods = {
-            [8] = {
-                vpos = Vector(0, -0.2, -16.55),
-            }
-        },
+        VMBodygroups = {{ind = 2, bg = 1}},
     },
 
     -- Skins --
@@ -245,8 +237,13 @@ SWEP.Animations = {
         Framerate = 60,
         Time = 330 / 60,
     },
+    ["idle_empty"] = {
+        Source = "idle_empty",
+        Framerate = 60,
+        Time = 330 / 60,
+    },
     ["ready"] = {
-        Source = "ready",
+        Source = "idle",
         Framerate = 60,
         Time = 68 / 60,
         LHIK = true,
@@ -254,10 +251,7 @@ SWEP.Animations = {
         LHIKEaseOut = 0.3,
         LHIKOut = 0.6,
         SoundTable = {
-            { s = path .. "lowpolyfal_readydraw.ogg", t = 1 / 30, c = ca },
-            { s = path .. "lowpolyfal_readycharge.ogg", t = 12 / 30, c = ca },
-            { s = path .. "lowpolyfal_readycheck1.ogg", t = 30 / 30, c = ca },
-            { s = path .. "lowpolyfal_readycheck2.ogg", t = 35 / 30, c = ca }
+            --{ s = path .. "lowpolyfal_readydraw.ogg", t = 1 / 30, c = ca },
         },
     },
     ["draw"] = {
@@ -269,9 +263,21 @@ SWEP.Animations = {
         Framerate = 60,
         Time = 43 / 60,
         ShellEjectAt = 0.01,
+        SoundTable = {
+            { s = path .. "mech.ogg", t = 0, v = 60, c = ca },
+        },
+    },
+    ["fire_empty"] = {
+        Source = "fire_empty",
+        Framerate = 60,
+        Time = 43 / 60,
+        ShellEjectAt = 0.01,
+        SoundTable = {
+            { s = path .. "mech.ogg", t = 0, v = 60, c = ca },
+        },
     },
 
-    -- 200-R Reloads --
+    -- 100-R Reloads --
 
     ["reload"] = {
         Source = "reload",
@@ -299,7 +305,7 @@ SWEP.Animations = {
         Time = 344 / 60,
         LastClip1OutTime = 3,
         LHIK = true,
-        LHIKIn = 0.1,
+        LHIKIn = 2.2,
         LHIKEaseIn = 0.1,
         LHIKEaseOut = 0.15,
         LHIKOut = 0.7,
@@ -317,7 +323,7 @@ SWEP.Animations = {
 
     ["enter_inspect"] = {
         Source = "enter_inspect",
-        time = 35 / 60,
+        time = 70 / 60,
         Framerate = 60,
         LHIK = true,
         LHIKIn = 0.3,
@@ -328,7 +334,7 @@ SWEP.Animations = {
     },
     ["idle_inspect"] = {
         Source = "idle_inspect",
-        time = 72 / 60,
+        time = 120 / 60,
         Framerate = 60,
         LHIK = true,
         LHIKIn = 0,
@@ -336,7 +342,7 @@ SWEP.Animations = {
     },
     ["exit_inspect"] = {
         Source = "exit_inspect",
-        time = 66 / 60,
+        time = 143 / 60,
         Framerate = 60,
         LHIK = true,
         LHIKIn = 0,
@@ -349,7 +355,7 @@ SWEP.Animations = {
 
     ["enter_inspect_empty"] = {
         Source = "enter_inspect_empty",
-        time = 35 / 60,
+        time = 70 / 60,
         Framerate = 60,
         LHIK = true,
         LHIKIn = 0.1,
@@ -360,7 +366,7 @@ SWEP.Animations = {
     },
     ["idle_inspect_empty"] = {
         Source = "idle_inspect_empty",
-        time = 72 / 60,
+        time = 120 / 60,
         Framerate = 60,
         LHIK = true,
         LHIKIn = 0,
@@ -368,7 +374,7 @@ SWEP.Animations = {
     },
     ["exit_inspect_empty"] = {
         Source = "exit_inspect_empty",
-        time = 66 / 60,
+        time = 143 / 60,
         Framerate = 60,
         LHIK = true,
         LHIKIn = 0,
@@ -411,7 +417,7 @@ SWEP.Attachments = {
     },
     {
         PrintName = "Handguard",
-        Slot = {"lpfal_hand"},
+        Slot = {"lpm249_hand"},
 		DefaultAttIcon = Material("entities/att/acwatt_lpfal_defhand.png"),
         DefaultAttName = "21' Standard Issue Barrel",
         Bone = "Body",
@@ -436,7 +442,7 @@ SWEP.Attachments = {
         Slot = {"foregrip","bipod","ubgl"},
         Bone = "Body",
         Offset = {
-            vpos = Vector(0, 0.5, 2),
+            vpos = Vector(-0.05, 0.5, 1),
             vang = Angle(90, 0, -90),
         },
         ExcludeFlags = {"fnchand"},
@@ -446,39 +452,27 @@ SWEP.Attachments = {
         Slot = {"tac"},
         Bone = "Body",
         Offset = {
-            vpos = Vector(-0.6, -0.6, 1),
+            vpos = Vector(-0.8, -1, 1),
             vang = Angle(90, 0, 180),
         },
     },
     {
         PrintName = "Mag Type",
-        Slot = {"lpfal_mag"},
+        Slot = {"lpm249_mag"},
 		DefaultAttIcon = Material("entities/att/acwatt_lpfal_defmag.png"),
-        DefaultAttName = "20-Round Standard Mag",
+        DefaultAttName = "100-Round Standard Box",
     },
     {
         PrintName = "Stock",
-        Slot = {"lpglobal_stock","go_stock","lphm_stock","lpfal_stock"},
+        Slot = {"lpglobal_stock","go_stock","lphm_stock"},
 		DefaultAttIcon = Material("entities/att/acwatt_lpfal_defstock.png"),
-        DefaultAttName = "Standard Wooden Stock",
+        DefaultAttName = "Standard Polymer Stock",
         VMScale = Vector(0.9,0.9,0.9),
         Bone = "Body",
         Offset = {
-            vpos = Vector(0, -0.2, -16),
+            vpos = Vector(0, -2, -12.1),
             vang = Angle(90, 0, -90),
         },
-    },
-    {
-        PrintName = "Grip",
-        Slot = {"lpfal_grip"},
-		DefaultAttIcon = Material("entities/att/acwatt_lpfal_defgrip.png"),
-        DefaultAttName = "Standard Wooden Grip",
-    },
-    {
-        PrintName = "Dust Cover",
-        Slot = {"lpfal_dc"},
-		DefaultAttIcon = Material("entities/att/acwatt_lpfal_defdc.png"),
-        DefaultAttName = "Standard Dust Cover",
     },
     {
         PrintName = "Perk",

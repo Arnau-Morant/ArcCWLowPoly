@@ -50,7 +50,7 @@ end
 
 SWEP.ViewModel = "models/weapons/arccw/c_lowpolym82.mdl"
 SWEP.WorldModel = "models/weapons/w_snip_awp.mdl"
-SWEP.ViewModelFOV = 65
+SWEP.ViewModelFOV = 60
 SWEP.AnimShoot = ACT_HL2MP_GESTURE_RANGE_ATTACK_RPG
  
 SWEP.MirrorVMWM = true

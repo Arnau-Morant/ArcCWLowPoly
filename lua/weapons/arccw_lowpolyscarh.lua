@@ -63,8 +63,8 @@ SWEP.WorldModelOffset = {
 
 -- Damage parameters --
 
-SWEP.Damage = 58
-SWEP.DamageMin = 34
+SWEP.Damage = 42
+SWEP.DamageMin = 30
 SWEP.Range = 200
 SWEP.Penetration = 24
 SWEP.DamageType = DMG_BULLET
@@ -80,12 +80,12 @@ SWEP.ReducedClipSize = 10
 
 -- Recoil --
 
-SWEP.Recoil = 1.4
-SWEP.RecoilSide = 1
-SWEP.RecoilRise = 2
+SWEP.Recoil = 0.37
+SWEP.RecoilSide = 0.22
 
-SWEP.MaxRecoilBlowback = 2
-SWEP.VisualRecoilMult = 0.3
+SWEP.RecoilRise = 0
+SWEP.MaxRecoilBlowback = 0
+SWEP.VisualRecoilMult = 0.1
 SWEP.RecoilPunch = 1
 
 -- Firerate / Firemodes --

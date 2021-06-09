@@ -62,7 +62,7 @@ SWEP.WorldModelOffset = {
 
 -- Damage parameters --
 
-SWEP.Damage = 54
+SWEP.Damage = 44
 SWEP.DamageMin = 34
 SWEP.Range = 50
 SWEP.Penetration = 8
@@ -79,8 +79,8 @@ SWEP.ReducedClipSize = 3
 
 -- Recoil --
 
-SWEP.Recoil = 3
-SWEP.RecoilSide = 0.4
+SWEP.Recoil = 1
+SWEP.RecoilSide = 0.8
 
 SWEP.MaxRecoilBlowback = 1
 SWEP.VisualRecoilMult = 1
@@ -88,7 +88,7 @@ SWEP.RecoilPunch = 1
 
 -- Firerate / Firemodes --
 
-SWEP.Delay = 60 / 400
+SWEP.Delay = 60 / 450
 SWEP.Num = 1
 SWEP.Firemodes = {
     {
