@@ -165,8 +165,8 @@ $sequence "reload" {
 	{ event 5004 14 "Weapon_lowpolyhk416.Magrelease" }
 	{ event 5004 17 "Weapon_lowpolyhk416.Magout" }
 	{ event 5004 67 "Weapon_lowpolyhk416.Magin" }
-	{ event 5004 82 "Weapon_lowpolyhk416.Rattle" }
-	{ event 5004 110 "Weapon_lowpolyhk416.Shoulder" }
+	{ event 5004 84 "Weapon_lowpolyhk416.Rattle" }
+	{ event 5004 116 "Weapon_lowpolyhk416.Shoulder" }
 }
 
 // $sequence "reload_empty" {
