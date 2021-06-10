@@ -68,7 +68,7 @@ SWEP.MuzzleVelocity = 850
 -- Mag size --
 
 SWEP.ChamberSize = 1
-SWEP.Primary.ClipSize = 999
+SWEP.Primary.ClipSize = 30
 SWEP.ExtendedClipSize = 40
 SWEP.ReducedClipSize = 20
 
@@ -363,7 +363,7 @@ SWEP.Animations = {
         TPAnim = ACT_HL2MP_GESTURE_RELOAD_AR2,
         Time = 136 / 60,
         Framerate = 60,
-        LastClip1OutTime = 2,
+        LastClip1OutTime = 1,
         LHIK = true,
         LHIKIn = 0.2,
         LHIKEaseIn = 0.2,
@@ -374,11 +374,13 @@ SWEP.Animations = {
         Source = "reload_empty",
         TPAnim = ACT_HL2MP_GESTURE_RELOAD_AR2,
         Framerate = 60,
-        Time = 176 / 60,
+        Time = 160 / 60,
         LastClip1OutTime = 1,
         LHIK = true,
-        LHIKIn = 0.3,
-        LHIKOut = 0.4,
+        LHIKIn = 0.2,
+        LHIKEaseIn = 0.2,
+        LHIKEaseOut = 0.2,
+        LHIKOut = 0.6,
     },
     -- ["reload_iron"] = {
     --     Source = "reload_iron",
