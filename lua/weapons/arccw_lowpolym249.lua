@@ -255,7 +255,7 @@ SWEP.Animations = {
         },
     },
     ["draw"] = {
-        Source = "draw",
+        Source = "idle",
         Framerate = 60,
     },
     ["fire"] = {
