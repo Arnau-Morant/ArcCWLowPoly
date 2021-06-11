@@ -151,23 +151,6 @@ $sequence "fire_empty" {
 	{ event 5001 0 "1" }
 }
 
-// $sequence "fire_empty" {
-// 	"anims\fire_empty.smd"
-// 	fps 60
-// 	"ACT_VM_PRIMARYATTACK" 1
-// 	fadein 0.03
-// 	fadeout 0.03
-// 	{ event 5001 0 "1" }
-// }
-
-// $sequence "idle_empty" "anims\idle_empty.smd" {
-// 	fps 60
-// 	"ACT_VM_IDLE" 1
-// 	loop
-// 	snap
-// 	node "Ready"
-// }
-
 $sequence "ready" "anims\ready.smd" {
 	fps 60
 	"ACT_VM_DRAW" 1
@@ -193,8 +176,8 @@ $sequence "reload" {
 
 $sequence "reload_empty" {
 	"anims\reload_empty.smd"
-	//"anims\reload_empty_iron.smd"
-	//blend "sights" 0 1
+	"anims\reload_empty_iron.smd"
+	blend "sights" 0 1
 	fps 60
 	"ACT_VM_RELOAD" 1
 	snap
