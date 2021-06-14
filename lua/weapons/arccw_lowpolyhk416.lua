@@ -365,6 +365,7 @@ SWEP.Animations = {
         LHIKEaseIn = 0.2,
         LHIKEaseOut = 0.2,
         LHIKOut = 0.6,
+        MinProgress = 1,
     },
     ["reload_empty"] = {
         Source = "reload_empty",
@@ -377,6 +378,7 @@ SWEP.Animations = {
         LHIKEaseIn = 0.2,
         LHIKEaseOut = 0.2,
         LHIKOut = 0.6,
+        MinProgress = 1,
     },
 
     -- 9mm reloads --

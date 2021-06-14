@@ -50,15 +50,15 @@ end
 -- Viewmodel / Worldmodel / FOV --
 
 SWEP.ViewModel = "models/weapons/arccw/c_lowpolydeagle.mdl"
-SWEP.WorldModel = "models/weapons/w_rif_m4a1.mdl"
+SWEP.WorldModel = "models/weapons/w_pist_usp.mdl"
 SWEP.ViewModelFOV = 80
 SWEP.AnimShoot = ACT_HL2MP_GESTURE_RANGE_ATTACK_REVOLVER
 
 -- Damage parameters --
 
-SWEP.Damage = 52
+SWEP.Damage = 86
 SWEP.DamageMin = 21
-SWEP.Range = 75
+SWEP.Range = 70
 SWEP.Penetration = 25
 SWEP.DamageType = DMG_BULLET
 SWEP.ShootEntity = nil
@@ -83,7 +83,7 @@ SWEP.MaxRecoilPunch = 1
 
 -- Firerate / Firemodes --
 
-SWEP.Delay = 60 / 450
+SWEP.Delay = 60 / 200
 SWEP.Num = 1
 SWEP.Firemodes = {
     {
@@ -109,7 +109,7 @@ SWEP.NPCWeight = 71
 
 -- Accuracy --
 
-SWEP.AccuracyMOA = 5.5
+SWEP.AccuracyMOA = 0
 SWEP.HipDispersion = 550
 SWEP.MoveDispersion = 700
 
@@ -124,7 +124,7 @@ SWEP.SightTime = 0.4
 
 -- Length --
 
-SWEP.BarrelLength = 38
+SWEP.BarrelLength = 20
 SWEP.ExtraSightDist = 7
 
 -- Ironsights / Customization / Poses --
@@ -133,12 +133,12 @@ SWEP.HolsterPos = Vector(4.623, -2.211, 1.004)
 SWEP.HolsterAng = Angle(-8.443, 28.843, 0)
 
 SWEP.HoldtypeHolstered = "passive"
-SWEP.HoldtypeActive = "pistol"
+SWEP.HoldtypeActive = "revolver"
 SWEP.HoldtypeSights = "revolver"
 
 SWEP.IronSightStruct = {
-     Pos = Vector(-3.25, 0, 2.6),
-     Ang = Angle(0.1, 0, 0),
+     Pos = Vector(-3.25, 3, 2.7),
+     Ang = Angle(0, 0, 0),
      Magnification = 1,
      SwitchToSound = "",
 }
@@ -225,7 +225,7 @@ SWEP.Animations = {
     ["fire"] = {
         Source = {"fire_01", "fire_02", "fire_03"},
         framerate = 60,
-        Time = 30 / 60,
+        Time = 33 / 60,
         ShellEjectAt = 0.01,
     },
     ["fire_empty"] = {
@@ -240,9 +240,9 @@ SWEP.Animations = {
 
     ["reload"] = {
         Source = "reload",
-        TPAnim = ACT_HL2MP_GESTURE_RELOAD_AR2,
+        TPAnim = ACT_HL2MP_GESTURE_RELOAD_PISTOL,
         MinProgress = 2,
-        Time = 131 / 60,
+        Time = 126 / 60,
         framerate = 60,
         LastClip1OutTime = 0.9,
         LHIK = true,
@@ -254,11 +254,11 @@ SWEP.Animations = {
         },
     },
     ["reload_empty"] = {
-        Source = "reload",
-        TPAnim = ACT_HL2MP_GESTURE_RELOAD_AR2,
+        Source = "reload_empty",
+        TPAnim = ACT_HL2MP_GESTURE_RELOAD_PISTOL,
         framerate = 60,
-        Time = 131 / 60,
-        LastClip1OutTime = 1,
+        Time = 152 / 60,
+        LastClip1OutTime = 0.76,
         LHIK = true,
         LHIKIn = 0.1,
         LHIKEaseIn = 0.1,
@@ -346,16 +346,15 @@ SWEP.CamAttachment = 3
 SWEP.Attachments = {
     {
         PrintName = "Optic",
-        Slot = {"optic_lp", "optic", "sniper_optic"},
+        Slot = {"optic_lp"},
         DefaultAttName = "Iron Sights",
-        Bone = "Body",
+        Bone = "Slide",
         Offset = {
-            vpos = Vector(0, -1.5, -11),
+            vpos = Vector(0, -1, -3),
             vang = Angle(90, 0, -90),
         },
         ExtraSightDist = 10,
         InstalledEles = {"nors"},
-        CorrectivePos = Vector(0.37, 0, -0.05),
     },
     {
         PrintName = "Handguard",
