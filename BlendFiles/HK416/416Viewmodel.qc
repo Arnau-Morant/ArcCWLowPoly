@@ -77,7 +77,7 @@ $cbox 0 0 0 0 0 0
 $poseparameter "sights" 0 1 loop 0
 
 $sequence "EXP" {
-	"anims\EXP.smd"
+	"anims\idle_iron.smd"
 	fps 60
 	"ACT_VM_IDLE" 1
 	loop
@@ -191,95 +191,212 @@ $sequence "reload_empty" {
 	{ event 5004 130 "Weapon_lowpolyhk416.Shoulder" }
 }
 
-// $sequence "enter_inspect" {
-// 	"anims\enter_inspect.smd"
-// 	"ACT_VM_IDLE" 1
-// 	fadein 0.03
-// 	fadeout 0.03
-// 	fps 60
-// 	{ event 5004 10 "Weapon_lowpolyhk416.Raise" }
-// }
+$sequence "enter_inspect" {
+	"anims\enter_inspect.smd"
+	"ACT_VM_IDLE" 1
+	fadein 0.03
+	fadeout 0.03
+	fps 60
+	{ event 5004 0 "Weapon_lowpolyhk416.Rattle" }
+}
 
-// $sequence "idle_inspect" {
-// 	"anims\idle_inspect.smd"
-// 	"ACT_VM_IDLE" 1
-// 	fadein 0.03
-// 	fadeout 0.03
-// 	fps 60
-// }
+$sequence "idle_inspect" {
+	"anims\idle_inspect.smd"
+	"ACT_VM_IDLE" 1
+	fadein 0.03
+	fadeout 0.03
+	fps 60
+}
 
-// $sequence "exit_inspect" {
-// 	"anims\exit_inspect.smd"
-// 	"ACT_VM_IDLE" 1
-// 	fadein 0.03
-// 	fadeout 0.03
-// 	fps 60
-// 	{ event 5004 7 "Weapon_lowpolyhk416.Rattle" }
-// 	{ event 5004 96 "Weapon_lowpolyhk416.Shoulder" }
-// }
+$sequence "exit_inspect" {
+	"anims\exit_inspect.smd"
+	"anims\exit_inspect_iron.smd"
+	blend "sights" 0 1
+	"ACT_VM_IDLE" 1
+	fadein 0.03
+	fadeout 0
+	fps 60
+	{ event 5004 1 "Weapon_lowpolyhk416.Raise" }
+	{ event 5004 19 "Weapon_lowpolyhk416.Magrelease" }
+	{ event 5004 22 "Weapon_lowpolyhk416.Magout" }
+	{ event 5004 34 "Weapon_lowpolyhk416.Rattle" }
+	{ event 5004 101 "Weapon_lowpolyhk416.Magin" }
+	{ event 5004 152 "Weapon_lowpolyhk416.BoltBack" }
+	{ event 5004 190 "Weapon_lowpolyhk416.BoltForward" }
+	{ event 5004 200 "Weapon_lowpolyhk416.Shoulder" }
+}
 
-// $sequence "enter_inspect_empty" {
-// 	"anims\enter_inspect_empty.smd"
-// 	"ACT_VM_IDLE" 1
-// 	fadein 0.03
-// 	fadeout 0.03
-// 	fps 60
-// 	{ event 5004 10 "Weapon_lowpolyhk416.Raise" }
-// }
+$sequence "exit_inspect_417" {
+	"anims\exit_inspect_417.smd"
+	"anims\exit_inspect_iron_417.smd"
+	blend "sights" 0 1
+	"ACT_VM_IDLE" 1
+	fadein 0.03
+	fadeout 0
+	fps 60
+	{ event 5004 1 "Weapon_lowpolyhk416.Raise" }
+	{ event 5004 19 "Weapon_lowpolyhk416.Magrelease" }
+	{ event 5004 22 "Weapon_lowpolyhk416.Magout" }
+	{ event 5004 34 "Weapon_lowpolyhk416.Rattle" }
+	{ event 5004 101 "Weapon_lowpolyhk416.Magin" }
+	{ event 5004 152 "Weapon_lowpolyhk416.BoltBack" }
+	{ event 5004 190 "Weapon_lowpolyhk416.BoltForward" }
+	{ event 5004 200 "Weapon_lowpolyhk416.Shoulder" }
+}
 
-// $sequence "idle_inspect_empty" {
-// 	"anims\idle_inspect_empty.smd"
-// 	"ACT_VM_IDLE" 1
-// 	fadein 0.03
-// 	fadeout 0.03
-// 	fps 60
-// }
+$sequence "exit_inspect_419" {
+	"anims\exit_inspect_419.smd"
+	"anims\exit_inspect_iron_419.smd"
+	blend "sights" 0 1
+	"ACT_VM_IDLE" 1
+	fadein 0.03
+	fadeout 0
+	fps 60
+	{ event 5004 1 "Weapon_lowpolyhk416.Raise" }
+	{ event 5004 19 "Weapon_lowpolyhk416.Magrelease" }
+	{ event 5004 22 "Weapon_lowpolyhk416.Magout9mm" }
+	{ event 5004 34 "Weapon_lowpolyhk416.Rattle" }
+	{ event 5004 101 "Weapon_lowpolyhk416.Magin9mm" }
+	{ event 5004 152 "Weapon_lowpolyhk416.BoltBack" }
+	{ event 5004 190 "Weapon_lowpolyhk416.BoltForward" }
+	{ event 5004 200 "Weapon_lowpolyhk416.Shoulder" }
+}
 
-// $sequence "exit_inspect_empty" {
-// 	"anims\exit_inspect_empty.smd"
-// 	"ACT_VM_IDLE" 1
-// 	fadein 0.03
-// 	fadeout 0.03
-// 	fps 60
-// 	{ event 5004 7 "Weapon_lowpolyhk416.Rattle" }
-// 	{ event 5004 96 "Weapon_lowpolyhk416.Shoulder" }
-// }
+$sequence "enter_inspect_empty" {
+	"anims\enter_inspect_empty.smd"
+	"ACT_VM_IDLE" 1
+	fadein 0.03
+	fadeout 0.03
+	fps 60
+	{ event 5004 0 "Weapon_lowpolyhk416.Rattle" }
+}
 
-// $sequence "reload_9mm" {
-// 	"anims\reload_9mm.smd"
-// 	"anims\reload_iron.smd"
-// 	blend "sights" 0 1
-// 	blendwidth 2
-// 	fps 60
-// 	"ACT_VM_RELOAD" 1
-// 	fadein 0.2
-// 	fadeout 0.2
-// 	snap
-// 	{ event 5004 9 "Weapon_lowpolyhk416.Raise" }
-// 	{ event 5004 39 "Weapon_lowpolyhk416.Magrelease" }
-// 	{ event 5004 49 "Weapon_lowpolyhk416.Magout9mm" }
-// 	{ event 5004 71 "Weapon_lowpolyhk416.Magin9mm" }
-// 	{ event 5004 123 "Weapon_lowpolyhk416.Shoulder" }
-// }
+$sequence "idle_inspect_empty" {
+	"anims\idle_inspect_empty.smd"
+	"ACT_VM_IDLE" 1
+	fadein 0.03
+	fadeout 0.03
+	fps 60
+}
 
-// $sequence "reload_empty_9mm"  {
-// 	"anims\reload_empty.smd"
-// 	"anims\reload_empty_iron.smd"
-// 	blend "sights" 0 1
-// 	blendwidth 2
-// 	fps 60
-// 	"ACT_VM_RELOAD" 1
-// 	fadein 0.2
-// 	fadeout 0.2
-// 	snap
-// 	{ event 5004 9 "Weapon_lowpolyhk416.Raise" }
-// 	{ event 5004 20 "Weapon_lowpolyhk416.Magrelease" }
-// 	{ event 5004 39 "Weapon_lowpolyhk416.FastMagout9mm" }
-// 	{ event 5004 65 "Weapon_lowpolyhk416.Drop9mm" }
-// 	{ event 5004 90 "Weapon_lowpolyhk416.Magin9mm" }
-// 	{ event 5004 132 "Weapon_lowpolyhk416.Boltrelease" }
-// 	{ event 5004 150 "Weapon_lowpolyhk416.Shoulder" }
-// }
+$sequence "exit_inspect_empty" {
+	"anims\exit_inspect_empty.smd"
+	"anims\exit_inspect_empty_iron.smd"
+	blend "sights" 0 1
+	"ACT_VM_IDLE" 1
+	fadein 0.03
+	fadeout 0
+	fps 60
+	{ event 5004 1 "Weapon_lowpolyhk416.Raise" }
+	{ event 5004 19 "Weapon_lowpolyhk416.Magrelease" }
+	{ event 5004 22 "Weapon_lowpolyhk416.Magout" }
+	{ event 5004 34 "Weapon_lowpolyhk416.Rattle" }
+	{ event 5004 101 "Weapon_lowpolyhk416.Magin" }
+	{ event 5004 140 "Weapon_lowpolyhk416.Raise" }
+	{ event 5004 200 "Weapon_lowpolyhk416.Shoulder" }
+}
+
+$sequence "exit_inspect_empty_417" {
+	"anims\exit_inspect_empty_417.smd"
+	"anims\exit_inspect_empty_iron_417.smd"
+	blend "sights" 0 1
+	"ACT_VM_IDLE" 1
+	fadein 0.03
+	fadeout 0
+	fps 60
+	{ event 5004 1 "Weapon_lowpolyhk416.Raise" }
+	{ event 5004 19 "Weapon_lowpolyhk416.Magrelease" }
+	{ event 5004 22 "Weapon_lowpolyhk416.Magout" }
+	{ event 5004 34 "Weapon_lowpolyhk416.Rattle" }
+	{ event 5004 101 "Weapon_lowpolyhk416.Magin" }
+	{ event 5004 140 "Weapon_lowpolyhk416.Raise" }
+	{ event 5004 200 "Weapon_lowpolyhk416.Shoulder" }
+}
+
+$sequence "exit_inspect_empty_419" {
+	"anims\exit_inspect_empty_419.smd"
+	"anims\exit_inspect_empty_iron_419.smd"
+	blend "sights" 0 1
+	"ACT_VM_IDLE" 1
+	fadein 0.03
+	fadeout 0
+	fps 60
+	{ event 5004 1 "Weapon_lowpolyhk416.Raise" }
+	{ event 5004 19 "Weapon_lowpolyhk416.Magrelease" }
+	{ event 5004 22 "Weapon_lowpolyhk416.Magout9mm" }
+	{ event 5004 34 "Weapon_lowpolyhk416.Rattle" }
+	{ event 5004 101 "Weapon_lowpolyhk416.Magin9mm" }
+	{ event 5004 140 "Weapon_lowpolyhk416.Raise" }
+	{ event 5004 200 "Weapon_lowpolyhk416.Shoulder" }
+}
+
+$sequence "reload_419" {
+	"anims\reload_419.smd"
+	"anims\reload_iron.smd" //Lazy
+	blend "sights" 0 1
+	fps 60
+	"ACT_VM_RELOAD" 1
+	fadein 0.2
+	fadeout 0.2
+	snap
+	{ event 5004 9 "Weapon_lowpolyhk416.Raise" }
+	{ event 5004 14 "Weapon_lowpolyhk416.Magrelease" }
+	{ event 5004 17 "Weapon_lowpolyhk416.Magout9mm" }
+	{ event 5004 67 "Weapon_lowpolyhk416.Magin9mm" }
+	{ event 5004 84 "Weapon_lowpolyhk416.Rattle" }
+	{ event 5004 116 "Weapon_lowpolyhk416.Shoulder" }
+}
+
+$sequence "reload_empty_419"  {
+	"anims\reload_empty_419.smd"
+	"anims\reload_empty_iron.smd" //Lazy
+	blend "sights" 0 1
+	fps 60
+	"ACT_VM_RELOAD" 1
+	fadein 0.2
+	fadeout 0.2
+	snap
+	{ event 5004 9 "Weapon_lowpolyhk416.Raise" }
+	{ event 5004 14 "Weapon_lowpolyhk416.Magrelease" }
+	{ event 5004 18 "Weapon_lowpolyhk416.FastMagout9mm" }
+	{ event 5004 48 "Weapon_lowpolyhk416.Drop9mm" }
+	{ event 5004 68 "Weapon_lowpolyhk416.Magin9mm" }
+	{ event 5004 106 "Weapon_lowpolyhk416.Rattle" }
+	{ event 5004 107 "Weapon_lowpolyhk416.Boltrelease" }
+	{ event 5004 130 "Weapon_lowpolyhk416.Shoulder" }
+}
+
+$sequence "reload_417" {
+	"anims\reload_417.smd"
+	"anims\reload_iron.smd" //Lazy
+	blend "sights" 0 1
+	fps 60
+	"ACT_VM_RELOAD" 1
+	snap
+	{ event 5004 9 "Weapon_lowpolyhk416.Raise" }
+	{ event 5004 14 "Weapon_lowpolyhk416.Magrelease" }
+	{ event 5004 17 "Weapon_lowpolyhk416.Magout" }
+	{ event 5004 67 "Weapon_lowpolyhk416.Magin" }
+	{ event 5004 84 "Weapon_lowpolyhk416.Rattle" }
+	{ event 5004 116 "Weapon_lowpolyhk416.Shoulder" }
+}
+
+$sequence "reload_empty_417" {
+	"anims\reload_empty_417.smd"
+	"anims\reload_empty_iron.smd" //Lazy
+	blend "sights" 0 1
+	fps 60
+	"ACT_VM_RELOAD" 1
+	snap
+	{ event 5004 9 "Weapon_lowpolyhk416.Raise" }
+	{ event 5004 14 "Weapon_lowpolyhk416.Magrelease" }
+	{ event 5004 18 "Weapon_lowpolyhk416.FastMagout" }
+	{ event 5004 48 "Weapon_lowpolyhk416.Drop" }
+	{ event 5004 68 "Weapon_lowpolyhk416.Magin" }
+	{ event 5004 106 "Weapon_lowpolyhk416.Rattle" }
+	{ event 5004 107 "Weapon_lowpolyhk416.Boltrelease" }
+	{ event 5004 130 "Weapon_lowpolyhk416.Shoulder" }
+}
 
 $bonemerge "ValveBiped.Bip01_Spine4"
 $bonemerge "ValveBiped.Bip01_L_Clavicle"

@@ -97,3 +97,17 @@ sound.Add({
 	volume = 		1.0,
 	sound = 			"weapons/arccw/hk416/lowpolyhk416_9mmdrop.ogg"
 })
+
+sound.Add({
+	name = 			"Weapon_lowpolyhk416.BoltBack" ,
+	channel = 		CHAN_AUTO,
+	volume = 		1.0,
+	sound = 			"weapons/arccw/hk416/lowpolyhk416_boltba.ogg"
+})
+
+sound.Add({
+	name = 			"Weapon_lowpolyhk416.BoltForward" ,
+	channel = 		CHAN_AUTO,
+	volume = 		1.0,
+	sound = 			"weapons/arccw/hk416/lowpolyhk416_boltfw.ogg"
+})

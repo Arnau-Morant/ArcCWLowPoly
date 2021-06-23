@@ -13,12 +13,12 @@ att.AutoStats = true
 
 att.Override_Trivia_Calibre = "7.62x51mm NATO"
 
-att.Mult_Recoil = 1.30
-att.Mult_Damage = 1.5
-att.Mult_DamageMin = 1.5
+att.Mult_Recoil = 2.5
+att.Mult_Damage = 2.5
+att.Mult_DamageMin = 2
 att.Override_Ammo = "ar2"
 att.Override_ClipSize = 20
-att.Override_ShellScale = 1.8
+att.Override_ShellScale = 1.3
 att.Mult_RPM = 0.834
 att.Override_Penetration = 17
 att.Mult_AccuracyMOA = 0.75
@@ -43,6 +43,10 @@ att.Hook_GetShootSound = function(wep, sound)
     else
         return "weapons/arccw/hk416/lowpolyhk416_762fire.ogg"
     end
+end
+
+att.Hook_TranslateAnimation = function(wep, anim)
+    return anim .. "_417"
 end
 
 att.ActivateElements = {"hk417mag"}

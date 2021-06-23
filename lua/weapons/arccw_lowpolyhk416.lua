@@ -125,6 +125,7 @@ SWEP.MagID = "416"
 SWEP.SpeedMult = 0.75
 SWEP.SightedSpeedMult = 0.80
 SWEP.SightTime = 0.4
+SWEP.ExtraSightDist = 8
 
 -- Gun length --
 
@@ -147,6 +148,9 @@ SWEP.IronSightStruct = {
 
 SWEP.CustomizePos = Vector(0, 0, 0)
 SWEP.CustomizeAng = Angle(0, 0, 0)
+
+SWEP.HolsterPos = Vector(3, -2, 0)
+SWEP.HolsterAng = Angle(-8, 25.881, 0)
 
 SWEP.CrouchPos = Vector(-2, -2, 0)
 SWEP.CrouchAng = Angle(0, 0, -8)
@@ -352,7 +356,7 @@ SWEP.Animations = {
         SoundTable = {{ s = "weapons/arccw/arx160/lowpolyarx160_empty.ogg", t = 0.03 }},
     },
 
-    -- 5.56 and 7.62 reloads --
+    -- 416 reloads --
 
     ["reload"] = {
         Source = "reload",
@@ -365,7 +369,6 @@ SWEP.Animations = {
         LHIKEaseIn = 0.2,
         LHIKEaseOut = 0.2,
         LHIKOut = 0.6,
-        MinProgress = 1,
     },
     ["reload_empty"] = {
         Source = "reload_empty",
@@ -378,45 +381,115 @@ SWEP.Animations = {
         LHIKEaseIn = 0.2,
         LHIKEaseOut = 0.2,
         LHIKOut = 0.6,
-        MinProgress = 1,
     },
 
-    -- 9mm reloads --
+    -- 417 variants --
 
-    ["reload_9mm"] = {
-        Source = "reload",
+    ["reload_417"] = {
+        Source = "reload_417",
         TPAnim = ACT_HL2MP_GESTURE_RELOAD_AR2,
-        Time = 148 / 60,
+        Time = 126 / 60,
+        Framerate = 60,
+        LastClip1OutTime = 1,
+        LHIK = true,
+        LHIKIn = 0.2,
+        LHIKEaseIn = 0.2,
+        LHIKEaseOut = 0.2,
+        LHIKOut = 0.6,
+    },
+    ["reload_empty_417"] = {
+        Source = "reload_empty_417",
+        TPAnim = ACT_HL2MP_GESTURE_RELOAD_AR2,
+        Framerate = 60,
+        Time = 160 / 60,
+        LastClip1OutTime = 0.8,
+        LHIK = true,
+        LHIKIn = 0.2,
+        LHIKEaseIn = 0.2,
+        LHIKEaseOut = 0.2,
+        LHIKOut = 0.6,
+    },
+
+    ["exit_inspect_417"] = {
+        Source = "exit_inspect_417",
+        time = 241 / 60,
+        Framerate = 60,
+        LHIK = true,
+        LHIKIn = 0,
+        LHIKEaseIn = 0.2,
+        LHIKEaseOut = 0.2,
+        LHIKOut = 0.7,
+    },
+
+    ["exit_inspect_empty_417"] = {
+        Source = "exit_inspect_empty_417",
+        time = 241 / 60,
+        Framerate = 60,
+        LHIK = true,
+        LHIKIn = 0,
+        LHIKEaseIn = 0.2,
+        LHIKEaseOut = 0.2,
+        LHIKOut = 0.7,
+    },
+
+    -- 419 variants --
+
+    ["reload_419"] = {
+        Source = "reload_419",
+        TPAnim = ACT_HL2MP_GESTURE_RELOAD_AR2,
+        Time = 126 / 60,
         Framerate = 60,
         LastClip1OutTime = 2,
         LHIK = true,
         LHIKIn = 0.3,
         LHIKOut = 0.4,
     },
-    ["reload_empty_9mm"] = {
-        Source = "reload_empty_9mm",
+    ["reload_empty_419"] = {
+        Source = "reload_empty_419",
         TPAnim = ACT_HL2MP_GESTURE_RELOAD_AR2,
         Framerate = 60,
-        Time = 176 / 60,
+        Time = 160 / 60,
         LastClip1OutTime = 1,
         LHIK = true,
         LHIKIn = 0.3,
         LHIKOut = 0.4,
     },
     
+    ["exit_inspect_419"] = {
+        Source = "exit_inspect_419",
+        time = 241 / 60,
+        Framerate = 60,
+        LHIK = true,
+        LHIKIn = 0,
+        LHIKEaseIn = 0.2,
+        LHIKEaseOut = 0.2,
+        LHIKOut = 0.7,
+    },
+
+    ["exit_inspect_empty_419"] = {
+        Source = "exit_inspect_empty_419",
+        time = 241 / 60,
+        Framerate = 60,
+        LHIK = true,
+        LHIKIn = 0,
+        LHIKEaseIn = 0.2,
+        LHIKEaseOut = 0.2,
+        LHIKOut = 0.7,
+    },
+    
     -- Inspecc --
 
     ["enter_inspect"] = {
         Source = "enter_inspect",
-        time = 30 / 60,
+        time = 45 / 60,
         Framerate = 60,
         LHIK = true,
-        LHIKIn = 0.1,
+        LHIKIn = 0.2,
         LHIKOut = 0,
     },
     ["idle_inspect"] = {
         Source = "idle_inspect",
-        time = 120 / 60,
+        time = 1 / 60,
         Framerate = 60,
         LHIK = true,
         LHIKIn = 0,
@@ -424,16 +497,18 @@ SWEP.Animations = {
     },
     ["exit_inspect"] = {
         Source = "exit_inspect",
-        time = 125 / 60,
+        time = 241 / 60,
         Framerate = 60,
         LHIK = true,
         LHIKIn = 0,
+        LHIKEaseIn = 0.2,
+        LHIKEaseOut = 0.2,
         LHIKOut = 0.7,
     },
 
     ["enter_inspect_empty"] = {
         Source = "enter_inspect_empty",
-        time = 30 / 60,
+        time = 45 / 60,
         Framerate = 60,
         LHIK = true,
         LHIKIn = 0.1,
@@ -441,7 +516,7 @@ SWEP.Animations = {
     },
     ["idle_inspect_empty"] = {
         Source = "idle_inspect_empty",
-        time = 120 / 60,
+        time = 1 / 60,
         Framerate = 60,
         LHIK = true,
         LHIKIn = 0,
@@ -449,10 +524,12 @@ SWEP.Animations = {
     },
     ["exit_inspect_empty"] = {
         Source = "exit_inspect_empty",
-        time = 125 / 60,
+        time = 241 / 60,
         Framerate = 60,
         LHIK = true,
         LHIKIn = 0,
+        LHIKEaseIn = 0.2,
+        LHIKEaseOut = 0.2,
         LHIKOut = 0.7,
     },
 }
@@ -492,9 +569,7 @@ SWEP.Attachments = {
             vpos = Vector(0, -3.5, 6),
             vang = Angle(90, 0, -90),
         },
-        ExtraSightDist = 10,
         InstalledEles = {"nois"},
-        CorrectivePos = Vector(0.5, 0, -0.22),
         Hidden = true, -- Shittiest way of fixing bodygroup priority --
     },
     {
