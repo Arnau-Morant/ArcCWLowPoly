@@ -195,7 +195,7 @@ $sequence "enter_inspect" {
 	"anims\enter_inspect.smd"
 	"ACT_VM_IDLE" 1
 	fadein 0.03
-	fadeout 0.03
+	fadeout 0
 	fps 60
 	{ event 5004 0 "Weapon_lowpolyhk416.Rattle" }
 }
@@ -203,8 +203,7 @@ $sequence "enter_inspect" {
 $sequence "idle_inspect" {
 	"anims\idle_inspect.smd"
 	"ACT_VM_IDLE" 1
-	fadein 0.03
-	fadeout 0.03
+	snap
 	fps 60
 }
 
@@ -266,7 +265,7 @@ $sequence "enter_inspect_empty" {
 	"anims\enter_inspect_empty.smd"
 	"ACT_VM_IDLE" 1
 	fadein 0.03
-	fadeout 0.03
+	fadeout 0
 	fps 60
 	{ event 5004 0 "Weapon_lowpolyhk416.Rattle" }
 }
@@ -274,8 +273,7 @@ $sequence "enter_inspect_empty" {
 $sequence "idle_inspect_empty" {
 	"anims\idle_inspect_empty.smd"
 	"ACT_VM_IDLE" 1
-	fadein 0.03
-	fadeout 0.03
+	snap
 	fps 60
 }
 

@@ -143,7 +143,10 @@ SWEP.IronSightStruct = {
      SwitchToSound = "",
 }
 
-SWEP.CustomizePos = Vector(0, 0, 0)
+SWEP.ActivePos = Vector(-1, -2, 1)
+SWEP.ActiveAng = Angle(0, 0, 0)
+
+SWEP.CustomizePos = Vector(-1, -2, 1)
 SWEP.CustomizeAng = Angle(0, 0, 0)
 
 SWEP.CrouchPos = Vector(-2, -2, 0)
@@ -255,9 +258,10 @@ SWEP.Animations = {
     },
     ["reload_empty"] = {
         Source = "reload_empty",
+        RareSource = "reload_empty_alt",
         TPAnim = ACT_HL2MP_GESTURE_RELOAD_PISTOL,
         framerate = 60,
-        Time = 152 / 60,
+        Time = 150 / 60,
         LastClip1OutTime = 0.76,
         LHIK = true,
         LHIKIn = 0.1,
@@ -272,7 +276,7 @@ SWEP.Animations = {
 
     ["enter_inspect"] = {
         Source = "enter_inspect",
-        time = 35 / 60,
+        time = 40 / 60,
         framerate = 60,
         LHIK = true,
         LHIKIn = 0.3,
@@ -282,7 +286,7 @@ SWEP.Animations = {
     },
     ["idle_inspect"] = {
         Source = "idle_inspect",
-        time = 72 / 60,
+        time = 120 / 60,
         framerate = 60,
         LHIK = true,
         LHIKIn = 0,
@@ -290,7 +294,7 @@ SWEP.Animations = {
     },
     ["exit_inspect"] = {
         Source = "exit_inspect",
-        time = 66 / 60,
+        time = 231 / 60,
         framerate = 60,
         LHIK = true,
         LHIKIn = 0,
@@ -302,7 +306,7 @@ SWEP.Animations = {
 
     ["enter_inspect_empty"] = {
         Source = "enter_inspect_empty",
-        time = 35 / 60,
+        time = 40 / 60,
         framerate = 60,
         LHIK = true,
         LHIKIn = 0.1,
@@ -312,7 +316,7 @@ SWEP.Animations = {
     },
     ["idle_inspect_empty"] = {
         Source = "idle_inspect_empty",
-        time = 72 / 60,
+        time = 120 / 60,
         framerate = 60,
         LHIK = true,
         LHIKIn = 0,
@@ -320,7 +324,7 @@ SWEP.Animations = {
     },
     ["exit_inspect_empty"] = {
         Source = "exit_inspect_empty",
-        time = 66 / 60,
+        time = 231 / 60,
         framerate = 60,
         LHIK = true,
         LHIKIn = 0,
@@ -342,6 +346,10 @@ end
 -- Attachments --
 
 SWEP.CamAttachment = 3
+
+SWEP.RejectAttachments = {
+  ["lpak_polymer"] = true,
+}
 
 SWEP.Attachments = {
     {
@@ -444,7 +452,7 @@ SWEP.Attachments = {
     {
         PrintName = "Skin",
         Slot = {"skin_lpak"},
-        DefaultAttName = "Wood",
+        DefaultAttName = "Black",
         FreeSlot = true,
     },
 }

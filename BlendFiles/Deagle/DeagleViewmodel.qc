@@ -134,59 +134,70 @@ $sequence "reload_empty" {
 	{ event 5004 130 "Weapon_lowpolyhk416.Shoulder" }
 }
 
-// $sequence "enter_inspect" {
-// 	"anims\enter_inspect.smd"
-// 	"ACT_VM_IDLE" 1
-// 	fadein 0.03
-// 	fadeout 0.03
-// 	fps 60
-// 	{ event 5004 10 "Weapon_lowpolyhk416.Raise" }
-// }
+$sequence "reload_empty_alt" {
+	"anims\reload_empty_alt.smd"
+	"anims\reload_empty_iron_alt.smd"
+	blend "sights" 0 1
+	fps 60
+	"ACT_VM_RELOAD" 1
+	snap
+	{ event 5004 9 "Weapon_lowpolyhk416.Raise" }
+	{ event 5004 14 "Weapon_lowpolyhk416.Magrelease" }
+	{ event 5004 18 "Weapon_lowpolyhk416.FastMagout" }
+	{ event 5004 48 "Weapon_lowpolyhk416.Drop" }
+	{ event 5004 68 "Weapon_lowpolyhk416.Magin" }
+	{ event 5004 106 "Weapon_lowpolyhk416.Rattle" }
+	{ event 5004 107 "Weapon_lowpolyhk416.Boltrelease" }
+	{ event 5004 130 "Weapon_lowpolyhk416.Shoulder" }
+}
 
-// $sequence "idle_inspect" {
-// 	"anims\idle_inspect.smd"
-// 	"ACT_VM_IDLE" 1
-// 	fadein 0.03
-// 	fadeout 0.03
-// 	fps 60
-// }
+$sequence "enter_inspect" {
+	"anims\enter_inspect.smd"
+	"ACT_VM_IDLE" 1
+	snap
+	fps 60
+	{ event 5004 10 "Weapon_lowpolyhk416.Raise" }
+}
 
-// $sequence "exit_inspect" {
-// 	"anims\exit_inspect.smd"
-// 	"ACT_VM_IDLE" 1
-// 	fadein 0.03
-// 	fadeout 0.03
-// 	fps 60
-// 	{ event 5004 7 "Weapon_lowpolyhk416.Rattle" }
-// 	{ event 5004 96 "Weapon_lowpolyhk416.Shoulder" }
-// }
+$sequence "idle_inspect" {
+	"anims\idle_inspect.smd"
+	"ACT_VM_IDLE" 1
+	snap
+	fps 60
+}
 
-// $sequence "enter_inspect_empty" {
-// 	"anims\enter_inspect_empty.smd"
-// 	"ACT_VM_IDLE" 1
-// 	fadein 0.03
-// 	fadeout 0.03
-// 	fps 60
-// 	{ event 5004 10 "Weapon_lowpolyhk416.Raise" }
-// }
+$sequence "exit_inspect" {
+	"anims\exit_inspect.smd"
+	"ACT_VM_IDLE" 1
+	snap
+	fps 60
+	{ event 5004 7 "Weapon_lowpolyhk416.Rattle" }
+	{ event 5004 96 "Weapon_lowpolyhk416.Shoulder" }
+}
 
-// $sequence "idle_inspect_empty" {
-// 	"anims\idle_inspect_empty.smd"
-// 	"ACT_VM_IDLE" 1
-// 	fadein 0.03
-// 	fadeout 0.03
-// 	fps 60
-// }
+$sequence "enter_inspect_empty" {
+	"anims\enter_inspect_empty.smd"
+	"ACT_VM_IDLE" 1
+	snap
+	fps 60
+	{ event 5004 10 "Weapon_lowpolyhk416.Raise" }
+}
 
-// $sequence "exit_inspect_empty" {
-// 	"anims\exit_inspect_empty.smd"
-// 	"ACT_VM_IDLE" 1
-// 	fadein 0.03
-// 	fadeout 0.03
-// 	fps 60
-// 	{ event 5004 7 "Weapon_lowpolyhk416.Rattle" }
-// 	{ event 5004 96 "Weapon_lowpolyhk416.Shoulder" }
-// }
+$sequence "idle_inspect_empty" {
+	"anims\idle_inspect_empty.smd"
+	"ACT_VM_IDLE" 1
+	snap
+	fps 60
+}
+
+$sequence "exit_inspect_empty" {
+	"anims\exit_inspect_empty.smd"
+	"ACT_VM_IDLE" 1
+	snap
+	fps 60
+	{ event 5004 7 "Weapon_lowpolyhk416.Rattle" }
+	{ event 5004 96 "Weapon_lowpolyhk416.Shoulder" }
+}
 
 $bonemerge "ValveBiped.Bip01_Spine4"
 $bonemerge "ValveBiped.Bip01_L_Clavicle"

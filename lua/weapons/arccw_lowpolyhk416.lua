@@ -125,7 +125,7 @@ SWEP.MagID = "416"
 SWEP.SpeedMult = 0.75
 SWEP.SightedSpeedMult = 0.80
 SWEP.SightTime = 0.4
-SWEP.ExtraSightDist = 8
+SWEP.ExtraSightDist = 4
 
 -- Gun length --
 
@@ -338,8 +338,7 @@ SWEP.Animations = {
         LHIKOut = 0.6,
     },
     ["draw"] = {
-        Source = "idle",
-        Framerate = 60,
+        Source = "draw",
     },
     ["fire"] = {
         Source = {"fire_01","fire_02","fire_03"},
@@ -489,7 +488,7 @@ SWEP.Animations = {
     },
     ["idle_inspect"] = {
         Source = "idle_inspect",
-        time = 1 / 60,
+        time = 120 / 60,
         Framerate = 60,
         LHIK = true,
         LHIKIn = 0,
@@ -516,7 +515,7 @@ SWEP.Animations = {
     },
     ["idle_inspect_empty"] = {
         Source = "idle_inspect_empty",
-        time = 1 / 60,
+        time = 120 / 60,
         Framerate = 60,
         LHIK = true,
         LHIKIn = 0,
@@ -569,6 +568,7 @@ SWEP.Attachments = {
             vpos = Vector(0, -3.5, 6),
             vang = Angle(90, 0, -90),
         },
+        ExtraSightDist = 10,
         InstalledEles = {"nois"},
         Hidden = true, -- Shittiest way of fixing bodygroup priority --
     },
