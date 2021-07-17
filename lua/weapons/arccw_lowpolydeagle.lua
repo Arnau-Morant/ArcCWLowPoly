@@ -276,7 +276,7 @@ SWEP.Animations = {
 
     ["enter_inspect"] = {
         Source = "enter_inspect",
-        time = 40 / 60,
+        time = 35 / 60,
         framerate = 60,
         LHIK = true,
         LHIKIn = 0.3,
@@ -306,7 +306,7 @@ SWEP.Animations = {
 
     ["enter_inspect_empty"] = {
         Source = "enter_inspect_empty",
-        time = 40 / 60,
+        time = 35 / 60,
         framerate = 60,
         LHIK = true,
         LHIKIn = 0.1,
@@ -356,9 +356,9 @@ SWEP.Attachments = {
         PrintName = "Optic",
         Slot = {"optic_lp"},
         DefaultAttName = "Iron Sights",
-        Bone = "Slide",
+        Bone = "Body",
         Offset = {
-            vpos = Vector(0, -1, -3),
+            vpos = Vector(0, -5.2, 6),
             vang = Angle(90, 0, -90),
         },
         ExtraSightDist = 10,

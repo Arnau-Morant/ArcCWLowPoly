@@ -19,7 +19,7 @@ att.Model = "models/weapons/arccw/atts/lp_553.mdl"
 
 att.AdditionalSights = {
     {
-        Pos = Vector(0, 5, -1.35),
+        Pos = Vector(0, 12, -1.35),
         Ang = Angle(0, 0, 0),
         Magnification = 1.1,
         ScrollFunc = ArcCW.SCROLL_NONE
@@ -29,7 +29,7 @@ att.AdditionalSights = {
 att.Holosight = true
 att.HolosightReticle = Material("holosights/eotech.png")
 att.HolosightFlare = Material("holosights/eotech_flare.png")
-att.HolosightSize = 1.2
+att.HolosightSize = 1
 att.HolosightBone = "holosight"
 
 att.Mult_SightTime = 1.075

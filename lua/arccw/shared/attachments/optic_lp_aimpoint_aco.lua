@@ -20,7 +20,7 @@ att.Model = "models/weapons/arccw/atts/lp_aimpoint_aco.mdl"
 
 att.AdditionalSights = {
     {
-        Pos = Vector(-0.01, 10, -1.55),
+        Pos = Vector(-0.01, 15, -1.55),
         Ang = Angle(0, 0, 0),
         Magnification = 2,
         ScrollFunc = ArcCW.SCROLL_ZOOM,

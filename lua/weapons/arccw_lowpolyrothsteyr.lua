@@ -424,7 +424,7 @@ SWEP.Attachments = {
     {
         PrintName = "Skins",
         Slot = {"skin_lpak"},
-        DefaultAttName = "Light Green",
+        DefaultAttName = "Wood",
         FreeSlot = true
     },
 }
