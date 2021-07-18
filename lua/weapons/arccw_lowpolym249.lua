@@ -8,7 +8,7 @@ SWEP.UseHands = true
 
 SWEP.MuzzleEffect = "muzzleflash_1"
 SWEP.ShellModel = "models/shells/shell_556.mdl"
-SWEP.ShellScale = 1.4
+SWEP.ShellScale = 1.2
 SWEP.ShellMaterial = "models/weapons/arcticcw/shell_556"
 SWEP.ShellPitch = 100
 
@@ -73,8 +73,8 @@ SWEP.ReducedClipSize = 30
 
 -- Recoil --
 
-SWEP.Recoil = 0.1
-SWEP.RecoilSide = 0.14
+SWEP.Recoil = 0.18
+SWEP.RecoilSide = 0.2
 
 SWEP.RecoilRise = 0.3
 SWEP.VisualRecoilMult = 0.4
@@ -83,7 +83,7 @@ SWEP.MaxRecoilPunch = 1
 
 -- Firerate / Firemodes --
 
-SWEP.Delay = 60 / 800
+SWEP.Delay = 60 / 824
 SWEP.Num = 1
 SWEP.Firemodes = {
     {
@@ -139,13 +139,13 @@ SWEP.HoldtypeActive = "ar2"
 SWEP.HoldtypeSights = "rpg"
 
 SWEP.IronSightStruct = {
-     Pos = Vector(-3.44, 4, 2.3),
+     Pos = Vector(-3.44, 0, 2.3),
      Ang = Angle(0.1, 0, 0),
      Magnification = 1,
      SwitchToSound = "",
 }
 
-SWEP.ActivePos = Vector(0, 0, 0)
+SWEP.ActivePos = Vector(0, -1, 0)
 SWEP.ActiveAng = Angle(0, 0, 0)
 
 SWEP.CustomizePos = Vector(0, 0, 0)
@@ -156,18 +156,19 @@ SWEP.CrouchAng = Angle(0, 0, -8)
 
 SWEP.MirrorVMWM = true
 SWEP.WorldModelOffset = {
-    pos        =    Vector(-12, 4.5, -5.5),
-    ang        =    Angle(-6, 0, 180),
+    pos        =    Vector(-10, 4.5, -4.5),
+    ang        =    Angle(-10, 0, 180),
     bone    =    "ValveBiped.Bip01_R_Hand",
 }
 
 -- Weapon sounds --
 
 local path = "weapons/arccw/m249/"
-local pathDist = "weapons/arccw/czbren/"
-SWEP.ShootSound = path .. "fire.ogg"
+local pathDist = "weapons/arccw/hk416/"
+SWEP.FirstShootSound = path .. "fire.ogg"
+SWEP.ShootSound = {path .. "fire2.ogg"}
 SWEP.ShootSoundSilenced = path .. "supp.ogg"
-SWEP.DistantShootSound = "weapons/arccw/czbren/lowpolyczbren_dist.ogg"
+SWEP.DistantShootSound = pathDist .. "lowpolyhk416_fire_auto_dist.ogg"
 
 -- Bodygroups --
 
@@ -221,6 +222,24 @@ SWEP.AttachmentElements = {
     ["lphm_stock"] = {
         VMBodygroups = {{ind = 2, bg = 1}},
     },
+    
+    ["commandobar"] = {
+        VMBodygroups = {{ind = 3, bg = 1}},
+        AttPosMods = {
+            [3] = {
+                vpos = Vector(0, 0, -6)
+            },
+        },
+    },
+    
+    ["sawbar"] = {
+        VMBodygroups = {{ind = 3, bg = 2}},
+        AttPosMods = {
+            [3] = {
+                vpos = Vector(0, 0, -6)
+            },
+        },
+    },
 
     -- Skins --
 
@@ -243,19 +262,17 @@ SWEP.Animations = {
         Time = 330 / 60,
     },
     ["ready"] = {
-        Source = "idle",
+        Source = "ready",
         Framerate = 60,
-        Time = 68 / 60,
-        LHIK = true,
-        LHIKIn = 0,
-        LHIKEaseOut = 0.3,
-        LHIKOut = 0.6,
+        Time = 122 / 60,
         SoundTable = {
-            --{ s = path .. "lowpolyfal_readydraw.ogg", t = 1 / 30, c = ca },
+            { s = path .. "start.ogg", t = 0 / 60, c = ca },
+            { s = path .. "charge.ogg", t = 36 / 60, c = ca },
+            { s = path .. "end.ogg", t = 78 / 60, c = ca },
         },
     },
     ["draw"] = {
-        Source = "idle",
+        Source = "draw",
         Framerate = 60,
     },
     ["fire"] = {
@@ -264,7 +281,6 @@ SWEP.Animations = {
         Time = 43 / 60,
         ShellEjectAt = 0.01,
         SoundTable = {
-            { s = path .. "mech.ogg", t = 0, v = 60, c = ca },
         },
     },
     ["fire_empty"] = {
@@ -273,7 +289,6 @@ SWEP.Animations = {
         Time = 43 / 60,
         ShellEjectAt = 0.01,
         SoundTable = {
-            { s = path .. "mech.ogg", t = 0, v = 60, c = ca },
         },
     },
 
@@ -292,17 +307,21 @@ SWEP.Animations = {
         LHIKEaseOut = 0.2,
         LHIKOut = 0.62,
         SoundTable = {
-            { s = path .. "lowpolyfal_cloth1.ogg", t = 4 / 30, c = ca },
-            { s = path .. "lowpolyfal_magout.ogg", t = 6 / 30, c = ca },
-            { s = path .. "lowpolyfal_magin.ogg", t = 32 / 30, c = ca },
-            { s = path .. "lowpolyfal_shoulder1.ogg", t = 48 / 30, c = ca },
+            { s = path .. "start.ogg", t = 0 / 60, c = ca },
+            { s = path .. "opentop.ogg", t = 20 / 60, c = ca },
+            { s = path .. "beltout.ogg", t = 62 / 60, c = ca },
+            { s = path .. "magout.ogg", t = 68 / 60, c = ca },
+            { s = path .. "magin.ogg", t = 143 / 60, c = ca },
+            { s = path .. "beltin.ogg", t = 165 / 60, c = ca },
+            { s = path .. "closetop.ogg", t = 230 / 60, c = ca },
+            { s = path .. "end.ogg", t = 257 / 60, c = ca },
         },
     },
     ["reload_empty"] = {
         Source = "reload_empty",
         TPAnim = ACT_HL2MP_GESTURE_RELOAD_AR2,
         Framerate = 60,
-        Time = 344 / 60,
+        Time = 348 / 60,
         LastClip1OutTime = 3,
         LHIK = true,
         LHIKIn = 2.2,
@@ -310,12 +329,15 @@ SWEP.Animations = {
         LHIKEaseOut = 0.15,
         LHIKOut = 0.7,
         SoundTable = {
-            { s = path .. "lowpolyfal_cloth2.ogg", t = 0 / 30, c = ca },
-            { s = path .. "lowpolyfal_emptymagout.ogg", t = 15 / 30, c = ca },
-            { s = path .. "lowpolyfal_emptymagin.ogg", t = 31 / 30, c = ca },
-            { s = path .. "lowpolyfal_drop.ogg", t = 34 / 30, c = ca },
-            { s = path .. "lowpolyfal_emptycharge.ogg", t = 48 / 30, c = ca },
-            { s = path .. "lowpolyfal_shoulder2.ogg", t = 57 / 30, c = ca },
+            { s = path .. "start.ogg", t = 0 / 60, c = ca },
+            { s = path .. "charge.ogg", t = 36 / 60, c = ca },
+            { s = path .. "opentop.ogg", t = 80 / 60, c = ca },
+            { s = path .. "magout.ogg", t = 117 / 60, c = ca },
+            { s = path .. "drop.ogg", t = 176 / 60, c = ca },
+            { s = path .. "magin.ogg", t = 193 / 60, c = ca },
+            { s = path .. "beltin.ogg", t = 215 / 60, c = ca },
+            { s = path .. "closetop.ogg", t = 278 / 60, c = ca },
+            { s = path .. "end.ogg", t = 303 / 60, c = ca },
         },
     },
     
@@ -408,7 +430,7 @@ SWEP.Attachments = {
         DefaultAttName = "Iron Sights",
         Bone = "topcover",
         Offset = {
-            vpos = Vector(-0.24, -0.6, -5),
+            vpos = Vector(-0.23, -0.6, -5),
             vang = Angle(90, 0, -90),
         },
         ExtraSightDist = 10,
@@ -417,12 +439,12 @@ SWEP.Attachments = {
     },
     {
         PrintName = "Handguard",
-        Slot = {"lpm249_hand"},
+        Slot = {"lpm249_barrel"},
 		DefaultAttIcon = Material("entities/att/acwatt_lpfal_defhand.png"),
-        DefaultAttName = "21' Standard Issue Barrel",
+        DefaultAttName = "14' Standard Issue Barrel",
         Bone = "Body",
         Offset = {
-            vpos = Vector(3.07, -3.8, -27),
+            vpos = Vector(2.8, -5.5, -18),
             vang = Angle(90, 0, -90),
         },
     },
@@ -432,7 +454,7 @@ SWEP.Attachments = {
         Slot = {"muzzle"},
         Bone = "Barrel",
         Offset = {
-            vpos = Vector(0, 0, -4),
+            vpos = Vector(0, 0, -5),
             vang = Angle(90, 0, -90),
         },
         InstalledEles = {"nofh"},

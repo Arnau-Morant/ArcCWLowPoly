@@ -14,6 +14,12 @@ $bodygroup "2" {
 	studio "buffer.smd"
 }
 
+$bodygroup "3" {
+	studio "stbar.smd"
+	studio "commandobar.smd"
+	studio "sawbar.smd"
+}
+
 $texturegroup "skinfamilies"
 {
 	{ "Black" "LightBlackWire" }
@@ -88,11 +94,11 @@ $sequence "fire_empty" {
 	fadeout 0.03
 }
 
-// $sequence "ready" "anims\ready.smd" {
-// 	fps 60
-// 	"ACT_VM_DRAW" 1
-// 	snap
-// }
+$sequence "ready" "anims\ready.smd" {
+	fps 60
+	"ACT_VM_DRAW" 1
+	snap
+}
 
 $sequence "reload" {
 	"anims\reload.smd"

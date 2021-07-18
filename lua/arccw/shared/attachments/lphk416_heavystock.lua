@@ -11,6 +11,7 @@ att.AutoStats = true
 att.SortOrder = -1
 
 att.Mult_Recoil = 0.8
+att.Mult_SightedSpeedMult = 0.85
 att.Mult_SightTime = 1.15
 att.Mult_SpeedMult = 0.9
 
