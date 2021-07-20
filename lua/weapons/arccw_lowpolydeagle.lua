@@ -120,7 +120,7 @@ SWEP.MagID = "deagle"
 
 SWEP.SpeedMult = 0.8
 SWEP.SightedSpeedMult = 0.84
-SWEP.SightTime = 0.4
+SWEP.SightTime = 0.23
 
 -- Length --
 

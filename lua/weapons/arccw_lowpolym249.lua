@@ -57,7 +57,7 @@ SWEP.AnimShoot = ACT_HL2MP_GESTURE_RANGE_ATTACK_AR2
 -- Damage parameters --
 
 SWEP.Damage = 30
-SWEP.DamageMin = 17
+SWEP.DamageMin = 22
 SWEP.Range = 150
 SWEP.Penetration = 14
 SWEP.DamageType = DMG_BULLET
@@ -67,9 +67,9 @@ SWEP.MuzzleVelocity = 823
 -- Mag size --
 
 SWEP.ChamberSize = 0
-SWEP.Primary.ClipSize = 100
-SWEP.ExtendedClipSize = 200
-SWEP.ReducedClipSize = 30
+SWEP.Primary.ClipSize = 200
+SWEP.ExtendedClipSize = 201
+SWEP.ReducedClipSize = 100
 
 -- Recoil --
 
@@ -113,15 +113,15 @@ SWEP.NPCWeight = 60
 -- Accuracy --
 
 SWEP.AccuracyMOA = 5.6
-SWEP.HipDispersion = 600
+SWEP.HipDispersion = 1000
 SWEP.MoveDispersion = 800
 
 SWEP.Primary.Ammo = "smg1"
 
 -- Speed multipliers --
 
-SWEP.SpeedMult = 0.7
-SWEP.SightedSpeedMult = 0.72
+SWEP.SpeedMult = 0.68
+SWEP.SightedSpeedMult = 0.62
 SWEP.SightTime = 0.6
 
 -- Length --
@@ -140,12 +140,12 @@ SWEP.HoldtypeSights = "rpg"
 
 SWEP.IronSightStruct = {
      Pos = Vector(-3.44, 0, 2.3),
-     Ang = Angle(0.1, 0, 0),
+     Ang = Angle(0.1, 0, -2),
      Magnification = 1,
      SwitchToSound = "",
 }
 
-SWEP.ActivePos = Vector(0, -1, 0)
+SWEP.ActivePos = Vector(0, -1, 1)
 SWEP.ActiveAng = Angle(0, 0, 0)
 
 SWEP.CustomizePos = Vector(0, 0, 0)
@@ -226,7 +226,7 @@ SWEP.AttachmentElements = {
     ["commandobar"] = {
         VMBodygroups = {{ind = 3, bg = 1}},
         AttPosMods = {
-            [3] = {
+            [4] = {
                 vpos = Vector(0, 0, -6)
             },
         },
@@ -235,16 +235,42 @@ SWEP.AttachmentElements = {
     ["sawbar"] = {
         VMBodygroups = {{ind = 3, bg = 2}},
         AttPosMods = {
-            [3] = {
-                vpos = Vector(0, 0, -6)
+            [4] = {
+                vpos = Vector(0, 0, 0.5)
             },
         },
+    },
+    
+    ["redbar"] = {
+        VMBodygroups = {{ind = 3, bg = 3}},
+        AttPosMods = {
+            [4] = {
+                vpos = Vector(0, 0, -6.5)
+            },
+        },
+    },
+    
+    ["100box"] = {
+        VMBodygroups = {{ind = 4, bg = 1}},
+    },
+    
+    ["m249hs"] = {
+        VMBodygroups = {{ind = 1, bg = 1}},
+        TrueNameChange = "M249",
+    },
+    
+    ["modhs"] = {
+        VMBodygroups = {{ind = 1, bg = 2}},
+        TrueNameChange = "M249 PIP",
     },
 
     -- Skins --
 
     ["skin_wireframe"] = {
         VMSkin = 1,
+    },
+    ["skin_black"] = {
+        VMSkin = 2,
     },
 }
 
@@ -292,7 +318,7 @@ SWEP.Animations = {
         },
     },
 
-    -- 100-R Reloads --
+    -- 200-R Reloads --
 
     ["reload"] = {
         Source = "reload",
@@ -300,12 +326,12 @@ SWEP.Animations = {
         MinProgress = 1,
         Time = 298 / 60,
         Framerate = 60,
-        LastClip1OutTime = 2.4,
+        LastClip1OutTime = 2.1,
         LHIK = true,
-        LHIKIn = 0.2,
-        LHIKEaseIn = 0.2,
+        LHIKIn = 0.4,
+        LHIKEaseIn = 0.3,
         LHIKEaseOut = 0.2,
-        LHIKOut = 0.62,
+        LHIKOut = 0.7,
         SoundTable = {
             { s = path .. "start.ogg", t = 0 / 60, c = ca },
             { s = path .. "opentop.ogg", t = 20 / 60, c = ca },
@@ -340,8 +366,57 @@ SWEP.Animations = {
             { s = path .. "end.ogg", t = 303 / 60, c = ca },
         },
     },
+
+    -- 100-R Reloads --
+
+    ["reload_100"] = {
+        Source = "reload_100",
+        TPAnim = ACT_HL2MP_GESTURE_RELOAD_AR2,
+        MinProgress = 1,
+        Time = 298 / 60,
+        Framerate = 60,
+        LastClip1OutTime = 2.1,
+        LHIK = true,
+        LHIKIn = 0.4,
+        LHIKEaseIn = 0.3,
+        LHIKEaseOut = 0.2,
+        LHIKOut = 0.7,
+        SoundTable = {
+            { s = path .. "start.ogg", t = 0 / 60, c = ca },
+            { s = path .. "opentop.ogg", t = 20 / 60, c = ca },
+            { s = path .. "beltout.ogg", t = 62 / 60, c = ca },
+            { s = path .. "magout.ogg", t = 68 / 60, c = ca },
+            { s = path .. "magin.ogg", t = 143 / 60, c = ca },
+            { s = path .. "beltin.ogg", t = 165 / 60, c = ca },
+            { s = path .. "closetop.ogg", t = 230 / 60, c = ca },
+            { s = path .. "end.ogg", t = 257 / 60, c = ca },
+        },
+    },
+    ["reload_empty_100"] = {
+        Source = "reload_empty_100",
+        TPAnim = ACT_HL2MP_GESTURE_RELOAD_AR2,
+        Framerate = 60,
+        Time = 348 / 60,
+        LastClip1OutTime = 3,
+        LHIK = true,
+        LHIKIn = 2.2,
+        LHIKEaseIn = 0.1,
+        LHIKEaseOut = 0.15,
+        LHIKOut = 0.7,
+        SoundTable = {
+            { s = path .. "start.ogg", t = 0 / 60, c = ca },
+            { s = path .. "charge.ogg", t = 36 / 60, c = ca },
+            { s = path .. "opentop.ogg", t = 80 / 60, c = ca },
+            { s = path .. "magout.ogg", t = 117 / 60, c = ca },
+            { s = path .. "drop.ogg", t = 176 / 60, c = ca },
+            { s = path .. "magin.ogg", t = 193 / 60, c = ca },
+            { s = path .. "beltin.ogg", t = 215 / 60, c = ca },
+            { s = path .. "closetop.ogg", t = 278 / 60, c = ca },
+            { s = path .. "end.ogg", t = 303 / 60, c = ca },
+        },
+    },
     
-    -- Inspecc --
+    -- Inspecc 200-R --
 
     ["enter_inspect"] = {
         Source = "enter_inspect",
@@ -351,7 +426,7 @@ SWEP.Animations = {
         LHIKIn = 0.3,
         LHIKOut = 0,
         SoundTable = {
-            { s = path .. "lowpolyfal_cloth2.ogg", t = 0 / 30, c = ca },
+            { s = path .. "start.ogg", t = 0 / 60, c = ca },
         },
     },
     ["idle_inspect"] = {
@@ -369,9 +444,9 @@ SWEP.Animations = {
         LHIK = true,
         LHIKIn = 0,
         LHIKEaseOut = 0.3,
-        LHIKOut = 0.84,
+        LHIKOut = 2.1,
         SoundTable = {
-            { s = path .. "lowpolyfal_cloth1.ogg", t = 2 / 30, c = ca },
+            { s = path .. "end.ogg", t = 100 / 60, c = ca },
         },
     },
 
@@ -383,7 +458,7 @@ SWEP.Animations = {
         LHIKIn = 0.1,
         LHIKOut = 0,
         SoundTable = {
-            { s = path .. "lowpolyfal_cloth2.ogg", t = 0 / 30, c = ca },
+            { s = path .. "start.ogg", t = 0 / 60, c = ca },
         },
     },
     ["idle_inspect_empty"] = {
@@ -403,7 +478,73 @@ SWEP.Animations = {
         LHIKEaseOut = 0.3,
         LHIKOut = 0.84,
         SoundTable = {
-            { s = path .. "lowpolyfal_cloth1.ogg", t = 2 / 30, c = ca },
+            { s = path .. "end.ogg", t = 100 / 60, c = ca },
+        },
+    },
+    
+    -- Inspecc 100-R --
+
+    ["enter_inspect_100"] = {
+        Source = "enter_inspect_100",
+        time = 70 / 60,
+        Framerate = 60,
+        LHIK = true,
+        LHIKIn = 0.3,
+        LHIKOut = 0,
+        SoundTable = {
+            { s = path .. "start.ogg", t = 0 / 60, c = ca },
+        },
+    },
+    ["idle_inspect_100"] = {
+        Source = "idle_inspect_100",
+        time = 120 / 60,
+        Framerate = 60,
+        LHIK = true,
+        LHIKIn = 0,
+        LHIKOut = 0,
+    },
+    ["exit_inspect_100"] = {
+        Source = "exit_inspect_100",
+        time = 143 / 60,
+        Framerate = 60,
+        LHIK = true,
+        LHIKIn = 0,
+        LHIKEaseOut = 0.3,
+        LHIKOut = 0.84,
+        SoundTable = {
+            { s = path .. "end.ogg", t = 100 / 60, c = ca },
+        },
+    },
+
+    ["enter_inspect_empty_100"] = {
+        Source = "enter_inspect_empty_100",
+        time = 70 / 60,
+        Framerate = 60,
+        LHIK = true,
+        LHIKIn = 0.1,
+        LHIKOut = 0,
+        SoundTable = {
+            { s = path .. "start.ogg", t = 0 / 60, c = ca },
+        },
+    },
+    ["idle_inspect_empty_100"] = {
+        Source = "idle_inspect_empty_100",
+        time = 120 / 60,
+        Framerate = 60,
+        LHIK = true,
+        LHIKIn = 0,
+        LHIKOut = 0,
+    },
+    ["exit_inspect_empty_100"] = {
+        Source = "exit_inspect_empty_100",
+        time = 143 / 60,
+        Framerate = 60,
+        LHIK = true,
+        LHIKIn = 0,
+        LHIKEaseOut = 0.3,
+        LHIKOut = 0.84,
+        SoundTable = {
+            { s = path .. "end.ogg", t = 100 / 60, c = ca },
         },
     },
 }
@@ -419,10 +560,6 @@ end
 
 SWEP.CamAttachment = 3
 
-SWEP.RejectAttachments = {
-  ["lpak_polymer"] = true,
-}
-
 SWEP.Attachments = {
     {
         PrintName = "Optic",
@@ -430,18 +567,31 @@ SWEP.Attachments = {
         DefaultAttName = "Iron Sights",
         Bone = "topcover",
         Offset = {
-            vpos = Vector(-0.23, -0.6, -5),
             vang = Angle(90, 0, -90),
+        },
+        SlideAmount = {
+            vmin = Vector(-0.23, -0.6, -6.5),
+            vmax = Vector(-0.23, -0.6, -3),
         },
         ExtraSightDist = 10,
         InstalledEles = {"nors"},
-        CorrectivePos = Vector(0.13, 0, 0.33),
     },
     {
         PrintName = "Handguard",
         Slot = {"lpm249_barrel"},
-		DefaultAttIcon = Material("entities/att/acwatt_lpfal_defhand.png"),
+		DefaultAttIcon = Material("entities/att/acwatt_lpm249_defhandguard.png"),
         DefaultAttName = "14' Standard Issue Barrel",
+        Bone = "Body",
+        Offset = {
+            vpos = Vector(2.8, -5.5, -18),
+            vang = Angle(90, 0, -90),
+        },
+    },
+    {
+        PrintName = "Heatshield",
+        Slot = {"lpm249_hs"},
+		DefaultAttIcon = Material("entities/att/acwatt_lpm249_defhandguard.png"),
+        DefaultAttName = "No Heatshield",
         Bone = "Body",
         Offset = {
             vpos = Vector(2.8, -5.5, -18),
@@ -454,20 +604,20 @@ SWEP.Attachments = {
         Slot = {"muzzle"},
         Bone = "Barrel",
         Offset = {
-            vpos = Vector(0, 0, -5),
+            vpos = Vector(0, 0, -2),
             vang = Angle(90, 0, -90),
         },
         InstalledEles = {"nofh"},
     },
     { 
         PrintName = "Underbarrel",
-        Slot = {"foregrip","bipod","ubgl"},
+        Slot = {"foregrip","bipod"},
         Bone = "Body",
         Offset = {
             vpos = Vector(-0.05, 0.5, 1),
             vang = Angle(90, 0, -90),
         },
-        ExcludeFlags = {"fnchand"},
+        ExcludeFlags = {"commandohg"},
     },
     {
         PrintName = "Tactical",
@@ -481,8 +631,8 @@ SWEP.Attachments = {
     {
         PrintName = "Mag Type",
         Slot = {"lpm249_mag"},
-		DefaultAttIcon = Material("entities/att/acwatt_lpfal_defmag.png"),
-        DefaultAttName = "100-Round Standard Box",
+		DefaultAttIcon = Material("entities/att/acwatt_lpm249_defbox.png"),
+        DefaultAttName = "200-Round Standard Box",
     },
     {
         PrintName = "Stock",

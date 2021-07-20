@@ -358,7 +358,6 @@ SWEP.Attachments = {
         PrintName = "Backup Optic",
         Slot = "backup",
         Bone = "Body",
-        ExtraSightDist = 2,
         Offset = {
             vpos = Vector(0, -7.1, 8),
             vang = Angle(90, 0, -90),

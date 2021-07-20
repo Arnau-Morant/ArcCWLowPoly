@@ -6,7 +6,8 @@ $bodygroup "studio" {
 
 $bodygroup "1" {
 	blank
-	studio "hs.smd"
+	studio "defhs.smd"
+	studio "modhs.smd"
 }
 
 $bodygroup "2" {
@@ -18,13 +19,19 @@ $bodygroup "3" {
 	studio "stbar.smd"
 	studio "commandobar.smd"
 	studio "sawbar.smd"
+	studio "redbar.smd"
+}
+
+$bodygroup "4" {
+	studio "defbox.smd"
+	studio "100box.smd"
 }
 
 $texturegroup "skinfamilies"
 {
-	{ "Black" "LightBlackWire" }
-	{ "Black" "Wireframe" }
-	{ "Wood" "LightBlackWire" }
+	{ "Black" "LightBlackWire" "DarkTan" "2GreenMag" }
+	{ "Black" "Wireframe" "DarkTan" "2GreenMag" }
+	{ "Black" "LightBlackWire" "Black" "Black" }
 }
 
 $cdmaterials "models\weapons\arccw\shared"
@@ -46,7 +53,7 @@ $cbox 0 0 0 0 0 0
 $poseparameter "sights" 0 1 loop 0
 
 $sequence "exp" {
-	"anims\exp.smd"
+	"anims\idle_iron.smd"
 	fps 60
 	"ACT_VM_IDLE" 1
 	snap
@@ -118,6 +125,24 @@ $sequence "reload_empty" {
 	snap
 }
 
+$sequence "reload_100" {
+	"anims\reload_100.smd"
+	"anims\reload_iron.smd"
+	blend "sights" 0 1
+ 	fps 60
+ 	"ACT_VM_RELOAD" 1
+ 	snap
+}
+
+$sequence "reload_empty_100" {
+	"anims\reload_empty_100.smd"
+	"anims\reload_empty_iron.smd"
+	blend "sights" 0 1
+	fps 60
+	"ACT_VM_RELOAD" 1
+	snap
+}
+
 $sequence "enter_inspect" {
 	"anims\enter_inspect.smd"
 	fps 60
@@ -158,6 +183,52 @@ $sequence "idle_inspect_empty" {
 $sequence "exit_inspect_empty" {
 	"anims\exit_inspect_empty.smd"
 	"anims\exit_inspect_iron_empty.smd"
+	blend "sights" 0 1
+	fps 60
+	"ACT_VM_IDLE" 1
+	snap
+}
+
+$sequence "enter_inspect_100" {
+	"anims\enter_inspect_100.smd"
+	fps 60
+	"ACT_VM_IDLE" 1
+	snap
+}
+
+$sequence "idle_inspect_100" {
+	"anims\idle_inspect_100.smd"
+	fps 60
+	"ACT_VM_IDLE" 1
+	snap
+}
+
+$sequence "exit_inspect_100" {
+	"anims\exit_inspect_100.smd"
+	"anims\exit_inspect_iron_100.smd"
+	blend "sights" 0 1
+	fps 60
+	"ACT_VM_IDLE" 1
+	snap
+}
+
+$sequence "enter_inspect_empty_100" {
+	"anims\enter_inspect_empty_100.smd"
+	fps 60
+	"ACT_VM_IDLE" 1
+	snap
+}
+
+$sequence "idle_inspect_empty_100" {
+	"anims\idle_inspect_empty_100.smd"
+	fps 60
+	"ACT_VM_IDLE" 1
+	snap
+}
+
+$sequence "exit_inspect_empty_100" {
+	"anims\exit_inspect_empty_100.smd"
+	"anims\exit_inspect_iron_empty_100.smd"
 	blend "sights" 0 1
 	fps 60
 	"ACT_VM_IDLE" 1
