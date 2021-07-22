@@ -15,7 +15,7 @@ SWEP.ShellPitch = 90
 SWEP.MuzzleEffectAttachment = 1
 SWEP.CaseEffectAttachment = 2
 SWEP.CamAttachment = 3
-SWEP.TracerNum = 1
+SWEP.TracerNum = 5
 SWEP.TracerCol = Color(25, 255, 25)
 SWEP.TracerWidth = 2
 
@@ -145,6 +145,8 @@ SWEP.IronSightStruct = {
      Magnification = 1,
      SwitchToSound = "",
 }
+
+SWEP.ActivePos = Vector(0, -2, 0.4)
 
 SWEP.CustomizePos = Vector(0, 0, 0)
 SWEP.CustomizeAng = Angle(0, 0, 0)

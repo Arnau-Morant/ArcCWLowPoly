@@ -1,5 +1,5 @@
 att.PrintName = "M249 PIP Heatshield"
-att.Icon = Material("entities/att/acwatt_lpm249_commandohandguard.png", "smooth")
+att.Icon = Material("entities/att/acwatt_lpm249_modhs.png", "smooth")
 att.Description = "Literally used an M16A4 handguard for this one."
 att.Desc_Pros = {
     "- Cosmetic attachment"

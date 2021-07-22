@@ -51,7 +51,7 @@ end
 
 SWEP.ViewModel = "models/weapons/arccw/c_lowpolyscarh.mdl"
 SWEP.WorldModel = "models/weapons/w_rif_m4a1.mdl"
-SWEP.ViewModelFOV = 70
+SWEP.ViewModelFOV = 60
 SWEP.AnimShoot = ACT_HL2MP_GESTURE_RANGE_ATTACK_AR2
  
 SWEP.MirrorVMWM = true

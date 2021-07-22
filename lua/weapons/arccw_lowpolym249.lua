@@ -139,7 +139,7 @@ SWEP.HoldtypeActive = "ar2"
 SWEP.HoldtypeSights = "rpg"
 
 SWEP.IronSightStruct = {
-     Pos = Vector(-3.44, 0, 2.3),
+     Pos = Vector(-3.445, 0, 2),
      Ang = Angle(0.1, 0, -2),
      Magnification = 1,
      SwitchToSound = "",
@@ -156,7 +156,7 @@ SWEP.CrouchAng = Angle(0, 0, -8)
 
 SWEP.MirrorVMWM = true
 SWEP.WorldModelOffset = {
-    pos        =    Vector(-10, 4.5, -4.5),
+    pos        =    Vector(-8, 4.5, -6.5),
     ang        =    Angle(-10, 0, 180),
     bone    =    "ValveBiped.Bip01_R_Hand",
 }
@@ -229,6 +229,9 @@ SWEP.AttachmentElements = {
             [4] = {
                 vpos = Vector(0, 0, -6)
             },
+            [6] = {
+                vpos = Vector(-1, -0.6, 1)
+            },
         },
     },
     
@@ -252,6 +255,10 @@ SWEP.AttachmentElements = {
     
     ["100box"] = {
         VMBodygroups = {{ind = 4, bg = 1}},
+    },
+    
+    ["30mag"] = {
+        VMBodygroups = {{ind = 4, bg = 2}},
     },
     
     ["m249hs"] = {
@@ -306,8 +313,6 @@ SWEP.Animations = {
         Framerate = 60,
         Time = 43 / 60,
         ShellEjectAt = 0.01,
-        SoundTable = {
-        },
     },
     ["fire_empty"] = {
         Source = "fire_empty",
@@ -315,6 +320,7 @@ SWEP.Animations = {
         Time = 43 / 60,
         ShellEjectAt = 0.01,
         SoundTable = {
+            { s = path .. "empty.ogg", t = 0 / 60, c = ca },
         },
     },
 
@@ -415,6 +421,48 @@ SWEP.Animations = {
             { s = path .. "end.ogg", t = 303 / 60, c = ca },
         },
     },
+
+    -- 30-R Reloads --
+
+    ["reload_30"] = {
+        Source = "reload_30",
+        TPAnim = ACT_HL2MP_GESTURE_RELOAD_AR2,
+        MinProgress = 1,
+        Time = 298 / 60,
+        Framerate = 60,
+        LastClip1OutTime = 2.1,
+        LHIK = true,
+        LHIKIn = 0.4,
+        LHIKEaseIn = 0.3,
+        LHIKEaseOut = 0.2,
+        LHIKOut = 1,
+        SoundTable = {
+            { s = path .. "start.ogg", t = 0 / 60, c = ca },
+            { s = path .. "30magout.ogg", t = 60 / 60, c = ca },
+            { s = path .. "30magin.ogg", t = 135 / 60, c = ca },
+            { s = path .. "end.ogg", t = 220 / 60, c = ca },
+        },
+    },
+    ["reload_empty_30"] = {
+        Source = "reload_empty_30",
+        TPAnim = ACT_HL2MP_GESTURE_RELOAD_AR2,
+        Framerate = 60,
+        Time = 380 / 60,
+        LastClip1OutTime = 3,
+        LHIK = true,
+        LHIKIn = 0.4,
+        LHIKEaseIn = 0.3,
+        LHIKEaseOut = 0.3,
+        LHIKOut = 3.1,
+        SoundTable = {
+            { s = path .. "start.ogg", t = 0 / 60, c = ca },
+            { s = path .. "30magout.ogg", t = 50 / 60, c = ca },
+            { s = pathDist .. "lowpolyhk416_drop.ogg", t = 110 / 60, c = ca },
+            { s = path .. "30emptymagin.ogg", t = 130 / 60, c = ca },
+            { s = path .. "charge.ogg", t = 230 / 60, c = ca },
+            { s = path .. "end.ogg", t = 284 / 60, c = ca },
+        },
+    },
     
     -- Inspecc 200-R --
 
@@ -476,7 +524,7 @@ SWEP.Animations = {
         LHIK = true,
         LHIKIn = 0,
         LHIKEaseOut = 0.3,
-        LHIKOut = 0.84,
+        LHIKOut = 2.1,
         SoundTable = {
             { s = path .. "end.ogg", t = 100 / 60, c = ca },
         },
@@ -510,7 +558,7 @@ SWEP.Animations = {
         LHIK = true,
         LHIKIn = 0,
         LHIKEaseOut = 0.3,
-        LHIKOut = 0.84,
+        LHIKOut = 2.1,
         SoundTable = {
             { s = path .. "end.ogg", t = 100 / 60, c = ca },
         },
@@ -542,7 +590,73 @@ SWEP.Animations = {
         LHIK = true,
         LHIKIn = 0,
         LHIKEaseOut = 0.3,
-        LHIKOut = 0.84,
+        LHIKOut = 2.1,
+        SoundTable = {
+            { s = path .. "end.ogg", t = 100 / 60, c = ca },
+        },
+    },
+    
+    -- Inspecc 30-R --
+
+    ["enter_inspect_30"] = {
+        Source = "enter_inspect_30",
+        time = 70 / 60,
+        Framerate = 60,
+        LHIK = true,
+        LHIKIn = 0,
+        LHIKOut = 100,
+        SoundTable = {
+            { s = path .. "start.ogg", t = 0 / 60, c = ca },
+        },
+    },
+    ["idle_inspect_30"] = {
+        Source = "idle_inspect_30",
+        time = 120 / 60,
+        Framerate = 60,
+        LHIK = true,
+        LHIKIn = 0,
+        LHIKOut = 100,
+    },
+    ["exit_inspect_30"] = {
+        Source = "exit_inspect_30",
+        time = 143 / 60,
+        Framerate = 60,
+        LHIK = true,
+        LHIKIn = 0,
+        LHIKEaseOut = 0.3,
+        LHIKOut = 144 / 60,
+        SoundTable = {
+            { s = path .. "end.ogg", t = 100 / 60, c = ca },
+        },
+    },
+
+    ["enter_inspect_empty_30"] = {
+        Source = "enter_inspect_empty_30",
+        time = 70 / 60,
+        Framerate = 60,
+        LHIK = true,
+        LHIKIn = 0.1,
+        LHIKOut = 0,
+        SoundTable = {
+            { s = path .. "start.ogg", t = 0 / 60, c = ca },
+        },
+    },
+    ["idle_inspect_empty_30"] = {
+        Source = "idle_inspect_empty_30",
+        time = 120 / 60,
+        Framerate = 60,
+        LHIK = true,
+        LHIKIn = 0,
+        LHIKOut = 0,
+    },
+    ["exit_inspect_empty_30"] = {
+        Source = "exit_inspect_empty_30",
+        time = 143 / 60,
+        Framerate = 60,
+        LHIK = true,
+        LHIKIn = 0,
+        LHIKEaseOut = 0.3,
+        LHIKOut = 2.1,
         SoundTable = {
             { s = path .. "end.ogg", t = 100 / 60, c = ca },
         },
@@ -570,8 +684,8 @@ SWEP.Attachments = {
             vang = Angle(90, 0, -90),
         },
         SlideAmount = {
-            vmin = Vector(-0.23, -0.6, -6.5),
-            vmax = Vector(-0.23, -0.6, -3),
+            vmin = Vector(-0.23, -0.9, -6.5),
+            vmax = Vector(-0.23, -0.9, -3),
         },
         ExtraSightDist = 10,
         InstalledEles = {"nors"},
@@ -583,20 +697,15 @@ SWEP.Attachments = {
         DefaultAttName = "14' Standard Issue Barrel",
         Bone = "Body",
         Offset = {
-            vpos = Vector(2.8, -5.5, -18),
+            vpos = Vector(3.6, -6, -19),
             vang = Angle(90, 0, -90),
         },
     },
     {
         PrintName = "Heatshield",
         Slot = {"lpm249_hs"},
-		DefaultAttIcon = Material("entities/att/acwatt_lpm249_defhandguard.png"),
+		DefaultAttIcon = Material("entities/att/acwatt_lpm249_defhs.png"),
         DefaultAttName = "No Heatshield",
-        Bone = "Body",
-        Offset = {
-            vpos = Vector(2.8, -5.5, -18),
-            vang = Angle(90, 0, -90),
-        },
     },
     {
         PrintName = "Muzzle",
@@ -614,7 +723,7 @@ SWEP.Attachments = {
         Slot = {"foregrip","bipod"},
         Bone = "Body",
         Offset = {
-            vpos = Vector(-0.05, 0.5, 1),
+            vpos = Vector(-0.05, 0.7, 1),
             vang = Angle(90, 0, -90),
         },
         ExcludeFlags = {"commandohg"},
@@ -624,7 +733,7 @@ SWEP.Attachments = {
         Slot = {"tac"},
         Bone = "Body",
         Offset = {
-            vpos = Vector(-0.8, -1, 1),
+            vpos = Vector(-1, -1, 1),
             vang = Angle(90, 0, 180),
         },
     },
@@ -637,7 +746,7 @@ SWEP.Attachments = {
     {
         PrintName = "Stock",
         Slot = {"lpglobal_stock","go_stock","lphm_stock"},
-		DefaultAttIcon = Material("entities/att/acwatt_lpfal_defstock.png"),
+		DefaultAttIcon = Material("entities/att/acwatt_lpm249_defstock.png"),
         DefaultAttName = "Standard Polymer Stock",
         VMScale = Vector(0.9,0.9,0.9),
         Bone = "Body",
@@ -656,14 +765,14 @@ SWEP.Attachments = {
         FreeSlot = true,
         Bone = "Body",
         Offset = {
-            vpos = Vector(0.5, -0.1, -14),
+            vpos = Vector(0.6, -2, -7),
             vang = Angle(90, 0, -90),
         },
     },
     {
         PrintName = "Skin",
         Slot = {"skin_lpak"},
-        DefaultAttName = "Wood",
+        DefaultAttName = "Default",
         FreeSlot = true,
     },
 }

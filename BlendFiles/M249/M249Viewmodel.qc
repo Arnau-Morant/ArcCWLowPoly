@@ -25,6 +25,7 @@ $bodygroup "3" {
 $bodygroup "4" {
 	studio "defbox.smd"
 	studio "100box.smd"
+	studio "30mag.smd"
 }
 
 $texturegroup "skinfamilies"
@@ -143,6 +144,24 @@ $sequence "reload_empty_100" {
 	snap
 }
 
+$sequence "reload_30" {
+	"anims\reload_30.smd"
+	"anims\reload_iron_30.smd"
+	blend "sights" 0 1
+ 	fps 60
+ 	"ACT_VM_RELOAD" 1
+ 	snap
+}
+
+$sequence "reload_empty_30" {
+	"anims\reload_empty_30.smd"
+	"anims\reload_empty_iron_30.smd"
+	blend "sights" 0 1
+	fps 60
+	"ACT_VM_RELOAD" 1
+	snap
+}
+
 $sequence "enter_inspect" {
 	"anims\enter_inspect.smd"
 	fps 60
@@ -229,6 +248,52 @@ $sequence "idle_inspect_empty_100" {
 $sequence "exit_inspect_empty_100" {
 	"anims\exit_inspect_empty_100.smd"
 	"anims\exit_inspect_iron_empty_100.smd"
+	blend "sights" 0 1
+	fps 60
+	"ACT_VM_IDLE" 1
+	snap
+}
+
+$sequence "enter_inspect_30" {
+	"anims\enter_inspect_30.smd"
+	fps 60
+	"ACT_VM_IDLE" 1
+	snap
+}
+
+$sequence "idle_inspect_30" {
+	"anims\idle_inspect_30.smd"
+	fps 60
+	"ACT_VM_IDLE" 1
+	snap
+}
+
+$sequence "exit_inspect_30" {
+	"anims\exit_inspect_30.smd"
+	"anims\exit_inspect_iron_30.smd"
+	blend "sights" 0 1
+	fps 60
+	"ACT_VM_IDLE" 1
+	snap
+}
+
+$sequence "enter_inspect_empty_30" {
+	"anims\enter_inspect_empty_30.smd"
+	fps 60
+	"ACT_VM_IDLE" 1
+	snap
+}
+
+$sequence "idle_inspect_empty_30" {
+	"anims\idle_inspect_empty_30.smd"
+	fps 60
+	"ACT_VM_IDLE" 1
+	snap
+}
+
+$sequence "exit_inspect_empty_30" {
+	"anims\exit_inspect_empty_30.smd"
+	"anims\exit_inspect_iron_empty_30.smd"
 	blend "sights" 0 1
 	fps 60
 	"ACT_VM_IDLE" 1
