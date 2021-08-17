@@ -611,30 +611,6 @@ SWEP.Animations = {
         LHIKEaseOut = 0.2,
         LHIKOut = 0.4,
     },
-    -- ["reload_iron"] = {
-    --     Source = "reload_762_iron",
-    --     TPAnim = ACT_HL2MP_GESTURE_RELOAD_AR2,
-    --     Time = 179 / 60,
-    --     Framerate = 60,
-    --     LastClip1OutTime = 1.4,
-    --     LHIK = true,
-    --     LHIKIn = 0.26,
-    --     LHIKEaseIn = 0.2,
-    --     LHIKEaseOut = 0.22,
-    --     LHIKOut = 0.44,
-    -- },
-    -- ["reload_empty_iron"] = {
-    --     Source = "reload_762_empty_iron",
-    --     TPAnim = ACT_HL2MP_GESTURE_RELOAD_AR2,
-    --     Framerate = 60,
-    --     Time = 213 / 60,
-    --     LastClip1OutTime = 1.4,
-    --     LHIK = true,
-    --     LHIKIn = 0.26,
-    --     LHIKEaseIn = 0.2,
-    --     LHIKEaseOut = 0.22,
-    --     LHIKOut = 1.6,
-    -- },
 
     -- 5.45 & 5.56 reloads --
 
@@ -662,26 +638,6 @@ SWEP.Animations = {
         LHIKEaseOut = 0.2,
         LHIKOut = 0.4,
     },
-    -- ["reload_545_iron"] = {
-    --     Source = "reload_545_iron",
-    --     TPAnim = ACT_HL2MP_GESTURE_RELOAD_AR2,
-    --     Time = 179 / 60,
-    --     Framerate = 60,
-    --     LastClip1OutTime = 1.4,
-    --     LHIK = true,
-    --     LHIKIn = 0.6,
-    --     LHIKOut = 0.34,
-    -- },
-    -- ["reload_empty_545_iron"] = {
-    --     Source = "reload_empty_545_iron",
-    --     TPAnim = ACT_HL2MP_GESTURE_RELOAD_AR2,
-    --     Framerate = 60,
-    --     Time = 213 / 60,
-    --     LastClip1OutTime = 1.4,
-    --     LHIK = true,
-    --     LHIKIn = 0.2,
-    --     LHIKOut = 0.34,
-    -- },
 
     -- 9mm Reloads
 
@@ -710,26 +666,6 @@ SWEP.Animations = {
         LHIKEaseOut = 0.2,
         LHIKOut = 0.4,
     },
-    -- ["reload_9mm_iron"] = {
-    --     Source = "reload_9mm_iron",
-    --     TPAnim = ACT_HL2MP_GESTURE_RELOAD_AR2,
-    --     Time = 179 / 60,
-    --     Framerate = 60,
-    --     LastClip1OutTime = 1.4,
-    --     LHIK = true,
-    --     LHIKIn = 0.6,
-    --     LHIKOut = 0.34,
-    -- },
-    -- ["reload_empty_9mm_iron"] = {
-    --     Source = "reload_empty_9mm_iron",
-    --     TPAnim = ACT_HL2MP_GESTURE_RELOAD_AR2,
-    --     Framerate = 60,
-    --     Time = 213 / 60,
-    --     LastClip1OutTime = 1.4,
-    --     LHIK = true,
-    --     LHIKIn = 0.2,
-    --     LHIKOut = 0.34,
-    -- },
     
     -- Inspecc --
 

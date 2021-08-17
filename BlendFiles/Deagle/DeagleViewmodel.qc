@@ -2,6 +2,11 @@ $modelname "weapons\arccw\c_lowpolydeagle.mdl"
  
 $bodygroup "studio" {
 	studio "c_lowpolydeagle.smd"
+} 
+
+$bodygroup "1" {
+	studio "defbar.smd"
+	studio "tacbar.smd"
 }
 
 $texturegroup "skinfamilies"
@@ -83,6 +88,39 @@ $sequence "fire_03" {
 	{ event 5001 0 "1" }
 }
 
+$sequence "fire_01_comp" {
+	"anims\fire_01.smd"
+	"anims\fire_iron_tac.smd"
+	fps 60
+	"ACT_VM_PRIMARYATTACK" 1
+ 	blend "sights" 0 1
+	fadein 0.03
+	fadeout 0.03
+	{ event 5001 0 "1" }
+}
+
+$sequence "fire_02_comp" {
+	"anims\fire_02.smd"
+	"anims\fire_iron_tac.smd"
+	fps 60
+	"ACT_VM_PRIMARYATTACK" 1
+ 	blend "sights" 0 1
+	fadein 0.03
+	fadeout 0.03
+	{ event 5001 0 "1" }
+}
+
+$sequence "fire_03_comp" {
+	"anims\fire_03.smd"
+	"anims\fire_iron_tac.smd"
+	fps 60
+	"ACT_VM_PRIMARYATTACK" 1
+ 	blend "sights" 0 1
+	fadein 0.03
+	fadeout 0.03
+	{ event 5001 0 "1" }
+}
+
 $sequence "fire_empty" {
 	"anims\fire_empty.smd"
 	"anims\fire_iron_empty.smd"
@@ -94,12 +132,13 @@ $sequence "fire_empty" {
 	{ event 5001 0 "1" }
 }
 
-$sequence "ready" "anims\ready.smd" {
+$sequence "ready" {
+	"anims\ready.smd"
+	"anims\ready_iron.smd"
+ 	blend "sights" 0 1
 	fps 60
 	"ACT_VM_DRAW" 1
 	snap
-	{ event 5004 16 "Weapon_lowpolyhk416.Charge" }
-	{ event 5004 46 "Weapon_lowpolyhk416.Shoulder" }
 }
 
 $sequence "reload" {
@@ -109,12 +148,6 @@ $sequence "reload" {
 	fps 60
 	"ACT_VM_RELOAD" 1
 	snap
-	{ event 5004 9 "Weapon_lowpolyhk416.Raise" }
-	{ event 5004 14 "Weapon_lowpolyhk416.Magrelease" }
-	{ event 5004 17 "Weapon_lowpolyhk416.Magout" }
-	{ event 5004 67 "Weapon_lowpolyhk416.Magin" }
-	{ event 5004 84 "Weapon_lowpolyhk416.Rattle" }
-	{ event 5004 116 "Weapon_lowpolyhk416.Shoulder" }
 }
 
 $sequence "reload_empty" {
@@ -124,14 +157,6 @@ $sequence "reload_empty" {
 	fps 60
 	"ACT_VM_RELOAD" 1
 	snap
-	{ event 5004 9 "Weapon_lowpolyhk416.Raise" }
-	{ event 5004 14 "Weapon_lowpolyhk416.Magrelease" }
-	{ event 5004 18 "Weapon_lowpolyhk416.FastMagout" }
-	{ event 5004 48 "Weapon_lowpolyhk416.Drop" }
-	{ event 5004 68 "Weapon_lowpolyhk416.Magin" }
-	{ event 5004 106 "Weapon_lowpolyhk416.Rattle" }
-	{ event 5004 107 "Weapon_lowpolyhk416.Boltrelease" }
-	{ event 5004 130 "Weapon_lowpolyhk416.Shoulder" }
 }
 
 $sequence "reload_empty_alt" {
@@ -141,14 +166,6 @@ $sequence "reload_empty_alt" {
 	fps 60
 	"ACT_VM_RELOAD" 1
 	snap
-	{ event 5004 9 "Weapon_lowpolyhk416.Raise" }
-	{ event 5004 14 "Weapon_lowpolyhk416.Magrelease" }
-	{ event 5004 18 "Weapon_lowpolyhk416.FastMagout" }
-	{ event 5004 48 "Weapon_lowpolyhk416.Drop" }
-	{ event 5004 68 "Weapon_lowpolyhk416.Magin" }
-	{ event 5004 106 "Weapon_lowpolyhk416.Rattle" }
-	{ event 5004 107 "Weapon_lowpolyhk416.Boltrelease" }
-	{ event 5004 130 "Weapon_lowpolyhk416.Shoulder" }
 }
 
 $sequence "enter_inspect" {
@@ -156,7 +173,6 @@ $sequence "enter_inspect" {
 	"ACT_VM_IDLE" 1
 	snap
 	fps 60
-	{ event 5004 10 "Weapon_lowpolyhk416.Raise" }
 }
 
 $sequence "idle_inspect" {
@@ -168,11 +184,11 @@ $sequence "idle_inspect" {
 
 $sequence "exit_inspect" {
 	"anims\exit_inspect.smd"
+	"anims\exit_inspect_iron.smd"
+	blend "sights" 0 1
 	"ACT_VM_IDLE" 1
 	snap
 	fps 60
-	{ event 5004 7 "Weapon_lowpolyhk416.Rattle" }
-	{ event 5004 96 "Weapon_lowpolyhk416.Shoulder" }
 }
 
 $sequence "enter_inspect_empty" {
@@ -180,7 +196,6 @@ $sequence "enter_inspect_empty" {
 	"ACT_VM_IDLE" 1
 	snap
 	fps 60
-	{ event 5004 10 "Weapon_lowpolyhk416.Raise" }
 }
 
 $sequence "idle_inspect_empty" {
@@ -192,11 +207,11 @@ $sequence "idle_inspect_empty" {
 
 $sequence "exit_inspect_empty" {
 	"anims\exit_inspect_empty.smd"
+	"anims\exit_inspect_empty_iron.smd"
+	blend "sights" 0 1
 	"ACT_VM_IDLE" 1
 	snap
 	fps 60
-	{ event 5004 7 "Weapon_lowpolyhk416.Rattle" }
-	{ event 5004 96 "Weapon_lowpolyhk416.Shoulder" }
 }
 
 $bonemerge "ValveBiped.Bip01_Spine4"

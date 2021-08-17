@@ -146,10 +146,10 @@ SWEP.IronSightStruct = {
      SwitchToSound = "",
 }
 
-SWEP.CustomizePos = Vector(0, -1, -3.6)
+SWEP.CustomizePos = Vector(-2, -1, -3.6)
 SWEP.CustomizeAng = Angle(0, 0, 0)
 
-SWEP.ActivePos = Vector(0, -1, -3.6)
+SWEP.ActivePos = Vector(-2, -1, -3.6)
 SWEP.ActiveAng = Angle(0, 0, 0)
 
 SWEP.CrouchPos = Vector(-3, 0, -4.2)

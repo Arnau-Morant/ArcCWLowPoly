@@ -135,7 +135,7 @@ SWEP.BarrelLength = 45
 
 SWEP.HolsterPos = Vector(12, -1, -1)
 
-SWEP.ActivePos = Vector(0, -3, 0.5)
+SWEP.ActivePos = Vector(0, 0, 0.5)
 
 SWEP.HoldtypeHolstered = "passive"
 SWEP.HoldtypeActive = "ar2"

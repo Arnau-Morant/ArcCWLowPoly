@@ -6,7 +6,7 @@ SWEP.UseHands = true
 
 -- Muzzle and shell effects --
 
-SWEP.MuzzleEffect = "muzzleflash_1"
+SWEP.MuzzleEffect = "muzzleflash_5"
 SWEP.ShellModel = "models/shells/shell_9mm.mdl"
 SWEP.ShellScale = 2.1
 SWEP.ShellMaterial = "models/weapons/arcticcw/shell_9mm"
@@ -129,22 +129,22 @@ SWEP.ExtraSightDist = 7
 
 -- Ironsights / Customization / Poses --
 
-SWEP.HolsterPos = Vector(4.623, -2.211, 1.004)
-SWEP.HolsterAng = Angle(-8.443, 28.843, 0)
+SWEP.HolsterPos = Vector(-0.5, -4, 2)
+SWEP.HolsterAng = Angle(-5, 15, -20)
 
 SWEP.HoldtypeHolstered = "passive"
 SWEP.HoldtypeActive = "revolver"
 SWEP.HoldtypeSights = "revolver"
 
 SWEP.IronSightStruct = {
-     Pos = Vector(-3.25, 3, 2.7),
+     Pos = Vector(-3.25, 10, 2.7),
      Ang = Angle(0, 0, 0),
      Magnification = 1,
      SwitchToSound = "",
 }
 
-SWEP.ActivePos = Vector(-1, -4, 1)
-SWEP.ActiveAng = Angle(0, 0, 0)
+SWEP.ActivePos = Vector(0, -2, 1.4)
+SWEP.ActiveAng = Angle(0, 0, -2)
 
 SWEP.CustomizePos = Vector(-1, -2, 1)
 SWEP.CustomizeAng = Angle(0, 0, 0)
@@ -176,11 +176,8 @@ SWEP.DefaultBodygroups = "000000000"
 
 SWEP.AttachmentElements = {
 
-    ["nofh"] = {
-        VMBodygroups = {{ind = 1, bg = 4}},
-    },
-    ["nors"] = {
-        VMBodygroups = {{ind = 3, bg = 1}},
+    ["compbar"] = {
+        VMBodygroups = {{ind = 1, bg = 1}},
     },
 
     -- Skins --
@@ -214,12 +211,11 @@ SWEP.Animations = {
         LHIKIn = 0,
         LHIKEaseOut = 0.3,
         LHIKOut = 0.6,
-        -- SoundTable = {
-        --     { s = path .. "lowpolyfal_readydraw.ogg", t = 1 / 60, c = ca },
-        --     { s = path .. "lowpolyfal_readycharge.ogg", t = 12 / 60, c = ca },
-        --     { s = path .. "lowpolyfal_readycheck1.ogg", t = 30 / 60, c = ca },
-        --     { s = path .. "lowpolyfal_readycheck2.ogg", t = 35 / 60, c = ca }
-        -- },
+        SoundTable = {
+            { s = path .. "start.ogg", t = 0 / 60, c = ca },
+            { s = path .. "readycharge.ogg", t = 22 / 60, c = ca },
+            { s = path .. "end.ogg", t = 46 / 60, c = ca },
+        },
     },
     ["draw"] = {
         Source = "idle",
@@ -227,6 +223,12 @@ SWEP.Animations = {
     },
     ["fire"] = {
         Source = {"fire_01", "fire_02", "fire_03"},
+        framerate = 60,
+        Time = 33 / 60,
+        ShellEjectAt = 0.01,
+    },
+    ["fire_comp"] = {
+        Source = {"fire_01_comp", "fire_02_comp", "fire_03_comp"},
         framerate = 60,
         Time = 33 / 60,
         ShellEjectAt = 0.01,
@@ -342,7 +344,6 @@ SWEP.Hook_Think = function(wep)
     vm:SetPoseParameter( "sights", Lerp(wep:GetSightDelta(), 1, 0) )
 end
 
-
 -- Attachments --
 
 SWEP.CamAttachment = 3
@@ -365,15 +366,10 @@ SWEP.Attachments = {
         InstalledEles = {"nors"},
     },
     {
-        PrintName = "Handguard",
-        Slot = {"lpfal_hand"},
+        PrintName = "Barrel",
+        Slot = {"lpdeagle_barrel"},
 		DefaultAttIcon = Material("entities/att/acwatt_lpfal_defhand.png"),
-        DefaultAttName = "21' Standard Issue Barrel",
-        Bone = "Body",
-        Offset = {
-            vpos = Vector(3.07, -3.8, -27),
-            vang = Angle(90, 0, -90),
-        },
+        DefaultAttName = "Default Barrel",
     },
     {
         PrintName = "Muzzle",
