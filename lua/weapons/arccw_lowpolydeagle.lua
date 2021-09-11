@@ -118,9 +118,9 @@ SWEP.MagID = "deagle"
 
 -- Speed multipliers --
 
-SWEP.SpeedMult = 0.8
-SWEP.SightedSpeedMult = 0.84
-SWEP.SightTime = 0.23
+SWEP.SpeedMult = 0.9
+SWEP.SightedSpeedMult = 0.88
+SWEP.SightTime = 0.18
 
 -- Length --
 
@@ -137,13 +137,13 @@ SWEP.HoldtypeActive = "revolver"
 SWEP.HoldtypeSights = "revolver"
 
 SWEP.IronSightStruct = {
-     Pos = Vector(-3.25, 10, 2.7),
+     Pos = Vector(-2.55, 10, 1.5),
      Ang = Angle(0, 0, 0),
      Magnification = 1,
      SwitchToSound = "",
 }
 
-SWEP.ActivePos = Vector(0, -2, 1.4)
+SWEP.ActivePos = Vector(0, 0, 1)
 SWEP.ActiveAng = Angle(0, 0, -2)
 
 SWEP.CustomizePos = Vector(-1, -2, 1)
@@ -224,19 +224,19 @@ SWEP.Animations = {
     ["fire"] = {
         Source = {"fire_01", "fire_02", "fire_03"},
         framerate = 60,
-        Time = 33 / 60,
+        Time = 35 / 60,
         ShellEjectAt = 0.01,
     },
     ["fire_comp"] = {
         Source = {"fire_01_comp", "fire_02_comp", "fire_03_comp"},
         framerate = 60,
-        Time = 33 / 60,
+        Time = 35 / 60,
         ShellEjectAt = 0.01,
     },
     ["fire_empty"] = {
         Source = "fire_empty",
         framerate = 60,
-        Time = 34 / 60,
+        Time = 37 / 60,
         ShellEjectAt = 0.01,
         SoundTable = {{ s = path .. "mech_last.ogg", t = 0 }},
     },
@@ -247,7 +247,7 @@ SWEP.Animations = {
         Source = "reload",
         TPAnim = ACT_HL2MP_GESTURE_RELOAD_PISTOL,
         MinProgress = 2,
-        Time = 126 / 60,
+        Time = 111 / 60,
         framerate = 60,
         LastClip1OutTime = 0.9,
         LHIK = true,
@@ -263,7 +263,7 @@ SWEP.Animations = {
         RareSource = "reload_empty_alt",
         TPAnim = ACT_HL2MP_GESTURE_RELOAD_PISTOL,
         framerate = 60,
-        Time = 150 / 60,
+        Time = 146 / 60,
         LastClip1OutTime = 0.76,
         LHIK = true,
         LHIKIn = 0.1,
@@ -362,7 +362,6 @@ SWEP.Attachments = {
             vpos = Vector(0, -5.2, 6),
             vang = Angle(90, 0, -90),
         },
-        ExtraSightDist = 10,
         InstalledEles = {"nors"},
     },
     {
